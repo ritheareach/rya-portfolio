@@ -1,1 +1,104 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.documentElement.classList.add("js");
+const menuButton = document.querySelector(".menu-toggle");
+const navigation = document.getElementById("navigation");
+
+menuButton.addEventListener("click", () => {
+  const open = menuButton.getAttribute("aria-expanded") !== "true";
+  menuButton.setAttribute("aria-expanded", String(open));
+  navigation.classList.toggle("is-open", open);
+});
+
+navigation.addEventListener("click", (event) => {
+  if (event.target.closest("a")) {
+    menuButton.setAttribute("aria-expanded", "false");
+    navigation.classList.remove("is-open");
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Escape" &&
+    menuButton.getAttribute("aria-expanded") === "true"
+  ) {
+    menuButton.setAttribute("aria-expanded", "false");
+    navigation.classList.remove("is-open");
+    menuButton.focus();
+  }
+});
+
+document.querySelectorAll("[data-interest]").forEach((link) => {
+  link.addEventListener("click", () => {
+    document.getElementById("interest").value = link.dataset.interest;
+  });
+});
+
+document.querySelectorAll("img").forEach((image) => {
+  image.draggable = false;
+});
+document.addEventListener("dragstart", (event) => {
+  if (event.target.closest("img")) event.preventDefault();
+});
+
+async function refreshGalleries() {
+  const response = await fetch("assets/image-catalog.json", {
+    cache: "no-store",
+  });
+  if (!response.ok) return;
+  const catalog = await response.json();
+  const used = new Set(
+    [...document.querySelectorAll("img")]
+      .filter((image) => !image.closest(".photo-archive"))
+      .map((image) => image.getAttribute("src")),
+  );
+  // The hero cutout and this source photograph depict the same robot.
+  used.add("assets/robots/robot-23.webp");
+  for (const [key, sectionId, label] of [
+    ["gallery", "gallery", "academy photos"],
+    ["robots", "robots", "robot images"],
+  ]) {
+    const archive = document.querySelector(`#${sectionId} .photo-archive`);
+    const grid = archive.querySelector(".gallery-grid");
+    const existing = new Map(
+      [...grid.querySelectorAll("figure")].map((figure) => [
+        figure.querySelector("img").getAttribute("src"),
+        figure,
+      ]),
+    );
+    const images = catalog[key].filter((image) => !used.has(image.src));
+    const figures = images.map((image) => {
+      if (existing.has(image.src)) return existing.get(image.src);
+      const figure = document.createElement("figure");
+      const frame = document.createElement("div");
+      frame.className = "image-frame";
+      const img = document.createElement("img");
+      img.src = image.src;
+      img.alt = image.alt;
+      img.loading = "lazy";
+      img.draggable = false;
+      const caption = document.createElement("figcaption");
+      caption.textContent = image.alt;
+      frame.append(img);
+      figure.append(frame, caption);
+      return figure;
+    });
+    grid.replaceChildren(...figures);
+    archive.hidden = images.length === 0;
+    const summary = archive.querySelector("summary");
+    summary.firstChild.textContent = `Explore ${images.length} more ${label} `;
+  }
+}
+refreshGalleries().catch(() => {
+  // Keep the existing galleries usable if the catalog cannot be loaded.
+});
+
+document.getElementById("enquiry-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const fields = new FormData(event.currentTarget);
+  const subject = `RobotYOUNG enquiry: ${fields.get("interest")}`;
+  const body = `Name: ${fields.get("name")}\nEmail: ${fields.get("email")}\nInterest: ${fields.get("interest")}\n\n${fields.get("message")}`;
+  window.location.href = `mailto:robotyoungacademy@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  document.getElementById("form-status").textContent =
+    "Email draft prepared. Send it from your email app. If no app opens, please use the email link or WhatsApp instead.";
+});
