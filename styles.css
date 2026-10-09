@@ -337,6 +337,11 @@ h1 {
   height: auto;
   object-fit: cover;
 }
+#gallery .gallery-grid img {
+  aspect-ratio: 3 / 2;
+  height: auto;
+  object-fit: cover;
+}
 .gallery-grid figcaption {
   padding-top: 15px;
   font-size: 14px;
