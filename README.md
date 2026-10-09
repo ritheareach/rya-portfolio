@@ -57,8 +57,9 @@ remain as a fallback if the catalog cannot load.
 
 ## Enquiries
 
-The form prepares a `mailto:` draft in the visitor’s email application. It does
-not send, store, or register an enquiry. WhatsApp, telephone, email, and Google
+The form opens a prefilled Gmail draft in the browser. Visitors must sign in
+if needed and press Send. It does not send, store, or register an enquiry.
+WhatsApp, telephone, email, and Google
 Maps links provide alternative contact routes. No backend or CMS is configured.
 
 ## Before publishing

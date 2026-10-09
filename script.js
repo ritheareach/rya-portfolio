@@ -49,19 +49,22 @@ async function refreshGalleries() {
   const catalog = await response.json();
   const used = new Set(
     [...document.querySelectorAll("img")]
-      .filter((image) => !image.closest(".photo-archive"))
+      .filter((image) => !image.closest("#gallery, #robots"))
       .map((image) => image.getAttribute("src")),
   );
   // The hero cutout and this source photograph depict the same robot.
-  used.add("assets/robots/robot-23.webp");
+  used.add("assets/robots/005-robot-23.webp");
   for (const [key, sectionId, label] of [
     ["gallery", "gallery", "academy photos"],
     ["robots", "robots", "robot images"],
   ]) {
-    const archive = document.querySelector(`#${sectionId} .photo-archive`);
+    const section = document.getElementById(sectionId);
+    const featuredGrid = section.querySelector(":scope > .gallery-grid");
+    const featuredCount = featuredGrid.children.length;
+    const archive = section.querySelector(".photo-archive");
     const grid = archive.querySelector(".gallery-grid");
     const existing = new Map(
-      [...grid.querySelectorAll("figure")].map((figure) => [
+      [...section.querySelectorAll("figure")].map((figure) => [
         figure.querySelector("img").getAttribute("src"),
         figure,
       ]),
@@ -83,10 +86,16 @@ async function refreshGalleries() {
       figure.append(frame, caption);
       return figure;
     });
-    grid.replaceChildren(...figures);
-    archive.hidden = images.length === 0;
+    figures.forEach((figure) => figure.classList.remove("gallery-featured"));
+    if (sectionId === "gallery" && figures.length) {
+      figures[0].classList.add("gallery-featured");
+    }
+    featuredGrid.replaceChildren(...figures.slice(0, featuredCount));
+    grid.replaceChildren(...figures.slice(featuredCount));
+    const remaining = Math.max(0, figures.length - featuredCount);
+    archive.hidden = remaining === 0;
     const summary = archive.querySelector("summary");
-    summary.firstChild.textContent = `Explore ${images.length} more ${label} `;
+    summary.firstChild.textContent = `Explore ${remaining} more ${label} `;
   }
 }
 refreshGalleries().catch(() => {
@@ -98,7 +107,7 @@ document.getElementById("enquiry-form").addEventListener("submit", (event) => {
   const fields = new FormData(event.currentTarget);
   const subject = `RobotYOUNG enquiry: ${fields.get("interest")}`;
   const body = `Name: ${fields.get("name")}\nEmail: ${fields.get("email")}\nInterest: ${fields.get("interest")}\n\n${fields.get("message")}`;
-  window.location.href = `mailto:robotyoungacademy@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=robotyoungacademy%40gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   document.getElementById("form-status").textContent =
-    "Email draft prepared. Send it from your email app. If no app opens, please use the email link or WhatsApp instead.";
+    "Opening Gmail. Sign in if needed, then press Send to send your enquiry.";
 });

@@ -9,6 +9,8 @@ and awards are not inferred.
 
 Each filename below links to its website copy. The alt text is also set on the
 corresponding image in `index.html`.
+The original JPG copies retain their source filenames. Optimized WebP previews
+have randomly assigned numeric prefixes, which set the fixed gallery order.
 
 | Photo                                                          | Alt text                                                                                        |
 | -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
@@ -66,3 +68,24 @@ corresponding image in `index.html`.
 | [academy-1328.jpg](academy-1328.jpg) | A child speaking into a microphone held by an adult among seated attendees                            |
 | [academy-1289.jpg](academy-1289.jpg) | Adults and children attending an indoor RobotYOUNG Academy event                                      |
 | [academy-9687.jpg](academy-9687.jpg) | Students and adults celebrating graduation with certificates and medals                               |
+
+## Additional supplied photos
+
+These ten photos were supplied on 9 October 2026. Optimized WebP copies are
+limited to 800px wide; captions describe visible activities, not inferred dates.
+All academy and robot previews now use numbered prefixes. Galleries display
+eligible images in filename order, including the featured selection, and do not
+reshuffle on page reload.
+
+| Photo | Alt text |
+| --- | --- |
+| [032-project-team.webp](previews/032-project-team.webp) | Students and an instructor posing behind their model city and electronics projects |
+| [011-model-city-robot.webp](previews/011-model-city-robot.webp) | Students testing a small robot on cardboard roads beside wired electronics and model buildings |
+| [044-classroom-programming.webp](previews/044-classroom-programming.webp) | Students using laptops with block-based programming software in the academy classroom |
+| [022-academy-visitors.webp](previews/022-academy-visitors.webp) | Five visitors posing beside flags and the RobotYOUNG Academy wall sign |
+| [016-classroom-coding.webp](previews/016-classroom-coding.webp) | Learners working together on laptop programming activities in the classroom |
+| [024-project-guidance.webp](previews/024-project-guidance.webp) | An instructor guiding two students as they assemble a cardboard and electronics project |
+| [026-student-robot-project.webp](previews/026-student-robot-project.webp) | A student smiling beside a wired wheeled robot and a laptop |
+| [035-project-activity.webp](previews/035-project-activity.webp) | Two students watching an instructor work on a hands-on electronics project |
+| [056-project-demonstration.webp](previews/056-project-demonstration.webp) | Students and an instructor demonstrating a cardboard model city with robots and electronics |
+| [054-academy-group-visit.webp](previews/054-academy-group-visit.webp) | A large group posing outside the illuminated RobotYOUNG Academy entrance |

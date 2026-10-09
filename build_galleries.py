@@ -38,10 +38,12 @@ def build_catalog(write=True):
         for path in sorted((ROOT / folder).iterdir()):
             if not path.is_file() or path.suffix.lower() not in EXTENSIONS:
                 continue
-            if path.name == "hero-smart-car.webp" or path.stem.endswith("-hero"):
+            if path.name.endswith("hero-smart-car.webp") or path.stem.endswith("-hero"):
                 continue
             src = path.relative_to(ROOT).as_posix()
-            label = notes.get(src) or re.sub(r"[_-]+", " ", path.stem).strip()
+            source_name = re.sub(r"^\d{3}-", "", path.name)
+            source = path.with_name(source_name).relative_to(ROOT).as_posix()
+            label = notes.get(src) or notes.get(source) or re.sub(r"[_-]+", " ", Path(source_name).stem).strip()
             entries.append({"src": src, "alt": label})
         catalog[key] = entries
     if write:
