@@ -1,3 +1,6 @@
 /.amp/in/
 __pycache__/
 *.py[cod]
+
+# Original image uploads stay local; publish optimized assets from public/.
+/src/assets/
