@@ -13,7 +13,7 @@ def build_images():
     extensions = Image.registered_extensions()
     replacements = {}
     uploads = []
-    for folder, size in (("gallery", 1200), ("robots", 1200)):
+    for folder, size in (("gallery", 1000), ("robots", 1000)):
         directory = ROOT / "public/assets" / folder
         for source in sorted(directory.iterdir()):
             if not source.is_file() or source.name.startswith(".") or source.suffix.lower() in (".webp", ".md"):

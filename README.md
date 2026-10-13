@@ -135,7 +135,7 @@ The page names and asset paths below are relative to `public/`; `src/` and
   deployable website. Original uploads in Downloads remain unchanged.
 - `assets/gallery/PHOTO-NOTES.md` — filename-to-alt-text reference for all 49
   gallery photos. Original Downloads files are unchanged.
-- `assets/gallery/` — compressed website-ready WebP images (maximum 1200px) for
+- `assets/gallery/` — compressed website-ready WebP images (maximum 1000px) for
   gallery and classroom-led homepage display. Images are display-only, with
   individual captions and alt text; they do not open full-size files on click.
 - `assets/robots/` — optimized robot images and source-filename reference notes.
@@ -161,7 +161,7 @@ python3 scripts/build_galleries.py
 
 Both builds convert newly added JPG, PNG, and other Pillow-supported static
 images in `public/assets/gallery/` and `public/assets/robots/` to WebP.
-Gallery and robot images are limited to 1200px on the longest
+Gallery and robot images are limited to 1000px on the longest
 side, without upscaling. Transparency and EXIF orientation are preserved.
 Original uploads move to `src/assets/gallery/` or `src/assets/robots/`;
 existing WebP files are not re-encoded. The build updates matching template,

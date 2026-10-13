@@ -477,7 +477,7 @@ Pillow (`python3 -m pip install -r scripts/requirements.txt`). Both builds
 convert new Pillow-supported static image uploads in the public gallery and
 robot folders to WebP, retain originals under `src/assets/`, and update
 template and JSON references. Existing WebP files are left unchanged; gallery
-and robot images are capped at 1200px. Filename collisions
+and robot images are capped at 1000px. Filename collisions
 and animated uploads fail rather than losing data. Previously archived
 source JPGs are not bulk-converted. Run the commands below from the repository root.
 

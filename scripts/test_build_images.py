@@ -46,7 +46,7 @@ class ImageBuildTests(unittest.TestCase):
         for source, data in originals.items():
             self.assertFalse(source.exists())
             self.assertEqual((self.root / "src/assets" / source.parent.name / source.name).read_bytes(), data)
-        for path, size in ((gallery / "photo.webp", (300, 1200)), (robots / "robot.webp", (400, 1200)), (gallery / "small.webp", (30, 15))):
+        for path, size in ((gallery / "photo.webp", (250, 1000)), (robots / "robot.webp", (333, 1000)), (gallery / "small.webp", (30, 15))):
             with Image.open(path) as image:
                 self.assertEqual(image.format, "WEBP")
                 self.assertEqual(image.size, size)
