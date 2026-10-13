@@ -1025,14 +1025,14 @@ summary::-webkit-details-marker {
     width: calc(100% - 40px);
   }
   .site-header {
-    padding: 20px;
+    padding: 12px 20px;
     min-height: 80px;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 12px;
   }
   .site-header .brand img {
-    width: 78px;
-    height: 78px;
+    width: 56px;
+    height: 56px;
   }
   .menu-toggle {
     display: flex;
@@ -1042,19 +1042,86 @@ summary::-webkit-details-marker {
     border-radius: 8px;
     background: #f3faf4;
     color: var(--ink);
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 700;
     padding: 10px 12px;
     min-height: 44px;
+    cursor: pointer;
   }
-  nav {
-    flex-wrap: wrap;
-    gap: 10px 20px;
+  .menu-icon {
+    position: relative;
+    width: 18px;
+    height: 14px;
+  }
+  .menu-icon::before,
+  .menu-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    top: 3px;
+  }
+  .menu-icon::after { top: 11px; }
+  .menu-toggle[aria-expanded="true"] {
+    background: var(--ink);
+    color: white;
+    border-color: var(--ink);
+  }
+  .menu-toggle[aria-expanded="true"] .menu-icon::before {
+    top: 7px;
+    transform: rotate(45deg);
+  }
+  .menu-toggle[aria-expanded="true"] .menu-icon::after {
+    top: 7px;
+    transform: rotate(-45deg);
+  }
+  #navigation {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
     width: 100%;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    max-height: calc(100dvh - 105px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    font-size: 17px;
   }
-  .js nav {
+  #navigation a:not(.button) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 8px;
+  }
+  #navigation a:not(.button)::after {
+    content: "→";
+    color: var(--green);
+  }
+  #navigation a:not(.button):hover,
+  #navigation a[aria-current="page"]:not(.button) {
+    background: var(--mint);
+  }
+  #navigation .button {
+    justify-content: space-between;
+    margin-top: 12px;
+    min-height: 52px;
+    font-size: 15px;
+  }
+  .menu-toggle:focus-visible,
+  #navigation a:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+  }
+  .js #navigation {
     display: none;
   }
-  .js nav.is-open {
+  .js #navigation.is-open {
     display: flex;
   }
   .hero-grid {
