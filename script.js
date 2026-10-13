@@ -30,9 +30,19 @@ document.addEventListener("keydown", (event) => {
 
 document.querySelectorAll("[data-interest]").forEach((link) => {
   link.addEventListener("click", () => {
-    document.getElementById("interest").value = link.dataset.interest;
+    sessionStorage.setItem("enquiry-interest", link.dataset.interest);
+    const field = document.getElementById("interest");
+    if (field) {
+      field.value = link.dataset.interest;
+      sessionStorage.removeItem("enquiry-interest");
+    }
   });
 });
+const interest = document.getElementById("interest");
+if (interest && sessionStorage.getItem("enquiry-interest")) {
+  interest.value = sessionStorage.getItem("enquiry-interest");
+  sessionStorage.removeItem("enquiry-interest");
+}
 
 document.querySelectorAll("img").forEach((image) => {
   image.draggable = false;
@@ -59,6 +69,7 @@ async function refreshGalleries() {
     ["robots", "robots", "robot images"],
   ]) {
     const section = document.getElementById(sectionId);
+    if (!section) continue;
     const featuredGrid = section.querySelector(":scope > .gallery-grid");
     const featuredCount = featuredGrid.children.length;
     const archive = section.querySelector(".photo-archive");
@@ -102,7 +113,7 @@ refreshGalleries().catch(() => {
   // Keep the existing galleries usable if the catalog cannot be loaded.
 });
 
-document.getElementById("enquiry-form").addEventListener("submit", (event) => {
+document.getElementById("enquiry-form")?.addEventListener("submit", (event) => {
   event.preventDefault();
   const fields = new FormData(event.currentTarget);
   const subject = `RobotYOUNG enquiry: ${fields.get("interest")}`;

@@ -1,8 +1,8 @@
 # RobotYOUNG Academy
 
-Responsive, green-and-white technology-school homepage for **RobotYOUNG
+Responsive, green-and-white technology-school website for **RobotYOUNG
 Academy**. Includes seven program summaries with expandable details, academy
-information, photographed student activities, news and event enquiries,
+information, photographed student activities, a news blog with story pages,
 franchise enquiries, and contact options.
 
 ## Local preview
@@ -35,7 +35,17 @@ Before publishing to static hosting, run `python3 build_galleries.py` to refresh
 rebuild and republish the catalog whenever images change. The HTML galleries
 remain as a fallback if the catalog cannot load.
 
-- `index.html` — academy homepage structure and content
+- `index.html` — academy homepage with links to the dedicated sections
+- `about.html`, `programs.html`, `projects.html`, `gallery.html`,
+  `news.html`, `contact.html` — separate navigation pages; contact includes
+  franchise information and the shared enquiry form
+- `franchise.html` — redirects old bookmarks to the combined contact page
+- `beyond-the-classroom.html`, `next-learning-adventure.html`,
+  `stay-curious.html` — individual blog posts
+- `site-template.html` — shared header/footer and academy section content source
+- `build_pages.py` — generates the static pages; edit the template for academy
+  content and the `stories` list for blog posts, then run `python3 build_pages.py`.
+  Generated HTML is checked in, so no build step is needed to preview or host it.
 - `styles.css` — responsive visual system and layout
 - `script.js` — mobile navigation, program enquiry selection, and email draft
   preparation
@@ -64,8 +74,9 @@ Maps links provide alternative contact routes. No backend or CMS is configured.
 
 ## Before publishing
 
-The current implementation is a single-page design, not the complete seven-page
-public website. The academy introduction, mission and vision use the supplied
+The current implementation has separate static pages and a blog, but no news
+CMS or publishing dashboard. Blog copy is adapted from the existing academy
+information, not dated event announcements. The academy introduction, mission and vision use the supplied
 academy statement. The supplied requirements PDF describes the broader website,
 ERP, inventory and franchise platform; those systems are not implemented here.
 Project facts come from the local RYA website-copy and Facebook-facts notes;
