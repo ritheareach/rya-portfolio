@@ -1,5 +1,7 @@
 """Build the academy's static pages from the shared content template."""
 from pathlib import Path
+from html import escape
+import json
 import re
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -37,17 +39,24 @@ for name, (title, ids) in pages.items():
 # Preserve old franchise bookmarks without maintaining a second enquiry page.
 (PUBLIC / "franchise.html").write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url=contact.html#franchise"><title>Franchise enquiries — RobotYOUNG Academy</title></head><body><a href="contact.html#franchise">Continue to contact &amp; franchise enquiries</a></body></html>')
 
-stories = [
-    ("beyond-the-classroom", "Academy highlight", "Learning doesn’t stop at the classroom door.", "050-IMG_20260718_094400.webp", "Students working on robots together in the classroom", "From hands-on projects to Cambodia Robotics Olympiad participation, our learners take their ideas into the wider robotics community.", [
-        ("Ideas become something you can build", "Robotics brings science, technology, engineering and mathematics together. At RobotYOUNG Academy, learners explore these subjects through hands-on projects, turning ideas into builds they can test and improve."),
-        ("A wider community of makers", "Learning reaches beyond classroom activities through student projects and Cambodia Robotics Olympiad participation. Explore the academy’s project page for a closer look at what young makers are working on.")], "projects", "Explore student projects"),
-    ("next-learning-adventure", "Courses & camps", "Plan their next learning adventure.", "033-IMG_5959.webp", "A learner programming beside wheeled robots", "A starting point for curious minds: discover programs, ask questions and find a learning path that fits your child.", [
-        ("Start with their curiosity", "The academy offers learning opportunities in robotics, coding, AI and IoT, drones and more. Browse the program summaries and learning path to see where your child’s interests could lead."),
-        ("Talk to us about availability", "Ask the academy about current class openings and the next Summer Camp. Dates and availability are confirmed directly by the academy, so get in touch before making your plans.")], "programs", "Discover our programs"),
-    ("stay-curious", "Community", "Stay curious. Stay connected.", "045-IMG_8719.webp", "An exhibitor sharing robot models with visitors", "Workshops, STEM activities and the robotics community: there is always another question worth exploring.", [
-        ("Make room for discovery", "Building, experimenting and sharing ideas are part of the academy’s hands-on approach. Workshops and STEM activities offer opportunities to connect those interests with other curious learners."),
-        ("Keep in touch with the academy", "Contact RobotYOUNG Academy for workshop announcements, STEM activities and competition updates. The team can confirm what is coming up and help you find a suitable opportunity.")], "contact", "Ask about upcoming activities"),
-]
+stories = []
+records = json.loads((ROOT / "src/content/news.json").read_text())
+if not records:
+    raise ValueError("news.json needs at least one story for the homepage highlight")
+slugs = set()
+for record in records:
+    slug = record["slug"]
+    if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug) or slug in slugs or slug in {*pages, "index", "news", "franchise"}:
+        raise ValueError(f"Invalid, duplicate, or reserved news slug: {slug}")
+    slugs.add(slug)
+    if record["ctaTarget"] not in {"index", "news", *pages}:
+        raise ValueError(f"Unknown CTA page: {record['ctaTarget']}")
+    image = record["image"]
+    if Path(image).name != image or not (PUBLIC / "assets/gallery/previews" / image).is_file():
+        raise ValueError(f"News image not found in gallery/previews: {image}")
+    stories.append((slug, *(escape(record[key]) for key in ("category", "title", "image", "alt", "summary")),
+                    [(escape(section["heading"]), escape(section["text"])) for section in record["sections"]],
+                    record["ctaTarget"], escape(record["ctaLabel"])))
 
 def card(story, featured=False):
     slug, category, title, image, alt, summary, *_ = story

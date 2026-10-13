@@ -1,0 +1,110 @@
+[
+  {
+    "src": "assets/robots/001-robot-26.webp",
+    "caption": "Mecanum-wheel robot"
+  },
+  {
+    "src": "assets/robots/002-robot-01.webp",
+    "caption": "Omnidirectional robot platform"
+  },
+  {
+    "src": "assets/robots/003-robot-20.webp",
+    "caption": "Robotic arm & conveyor"
+  },
+  {
+    "src": "assets/robots/004-robot-17.webp",
+    "caption": "Articulated robotic arm"
+  },
+  {
+    "src": "assets/robots/005-robot-23.webp",
+    "caption": "Two-wheeled smart car"
+  },
+  {
+    "src": "assets/robots/006-robot-11.webp",
+    "caption": "Open-frame quadcopter"
+  },
+  {
+    "src": "assets/robots/007-robot-24.webp",
+    "caption": "Spider robot — alternate view"
+  },
+  {
+    "src": "assets/robots/008-robot-13.webp",
+    "caption": "Mecanum chassis — front view"
+  },
+  {
+    "src": "assets/robots/009-robot-09.webp",
+    "caption": "Wheeled robot with electronics"
+  },
+  {
+    "src": "assets/robots/010-robot-02.webp",
+    "caption": "Mini Dynamo One"
+  },
+  {
+    "src": "assets/robots/011-robot-19.webp",
+    "caption": "Service robot pair"
+  },
+  {
+    "src": "assets/robots/012-robot-03.webp",
+    "caption": "Weather-station designs"
+  },
+  {
+    "src": "assets/robots/013-robot-16.webp",
+    "caption": "Walking robot and tablet"
+  },
+  {
+    "src": "assets/robots/014-robot-27.webp",
+    "caption": "Mecanum chassis — rear view"
+  },
+  {
+    "src": "assets/robots/015-robot-22.webp",
+    "caption": "STEAMx LAB robot chassis"
+  },
+  {
+    "src": "assets/robots/016-robot-15.webp",
+    "caption": "Four-legged robot"
+  },
+  {
+    "src": "assets/robots/017-robot-25.webp",
+    "caption": "Spider robot"
+  },
+  {
+    "src": "assets/robots/018-robot-10.webp",
+    "caption": "Stacked electronics module"
+  },
+  {
+    "src": "assets/robots/019-robot-12.webp",
+    "caption": "Compact wheeled robot"
+  },
+  {
+    "src": "assets/robots/020-robot-18.webp",
+    "caption": "Shelf-style service robot"
+  },
+  {
+    "src": "assets/robots/021-robot-06.webp",
+    "caption": "Tracked robot"
+  },
+  {
+    "src": "assets/robots/022-robot-04.webp",
+    "caption": "Aircraft design — angled view"
+  },
+  {
+    "src": "assets/robots/023-robot-07.webp",
+    "caption": "Robotic arm with gripper"
+  },
+  {
+    "src": "assets/robots/024-robot-21.webp",
+    "caption": "Mini drone"
+  },
+  {
+    "src": "assets/robots/026-robot-08.webp",
+    "caption": "Articulated walking robot"
+  },
+  {
+    "src": "assets/robots/027-robot-05.webp",
+    "caption": "Aircraft design — front view"
+  },
+  {
+    "src": "assets/robots/028-robot-14.webp",
+    "caption": "Mobile automation platform"
+  }
+]

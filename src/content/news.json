@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "beyond-the-classroom",
+    "category": "Academy highlight",
+    "title": "Learning doesn’t stop at the classroom door.",
+    "image": "050-IMG_20260718_094400.webp",
+    "alt": "Students working on robots together in the classroom",
+    "summary": "From hands-on projects to Cambodia Robotics Olympiad participation, our learners take their ideas into the wider robotics community.",
+    "sections": [
+      {
+        "heading": "Ideas become something you can build",
+        "text": "Robotics brings science, technology, engineering and mathematics together. At RobotYOUNG Academy, learners explore these subjects through hands-on projects, turning ideas into builds they can test and improve."
+      },
+      {
+        "heading": "A wider community of makers",
+        "text": "Learning reaches beyond classroom activities through student projects and Cambodia Robotics Olympiad participation. Explore the academy’s project page for a closer look at what young makers are working on."
+      }
+    ],
+    "ctaTarget": "projects",
+    "ctaLabel": "Explore student projects"
+  },
+  {
+    "slug": "next-learning-adventure",
+    "category": "Courses & camps",
+    "title": "Plan their next learning adventure.",
+    "image": "033-IMG_5959.webp",
+    "alt": "A learner programming beside wheeled robots",
+    "summary": "A starting point for curious minds: discover programs, ask questions and find a learning path that fits your child.",
+    "sections": [
+      {
+        "heading": "Start with their curiosity",
+        "text": "The academy offers learning opportunities in robotics, coding, AI and IoT, drones and more. Browse the program summaries and learning path to see where your child’s interests could lead."
+      },
+      {
+        "heading": "Talk to us about availability",
+        "text": "Ask the academy about current class openings and the next Summer Camp. Dates and availability are confirmed directly by the academy, so get in touch before making your plans."
+      }
+    ],
+    "ctaTarget": "programs",
+    "ctaLabel": "Discover our programs"
+  },
+  {
+    "slug": "stay-curious",
+    "category": "Community",
+    "title": "Stay curious. Stay connected.",
+    "image": "045-IMG_8719.webp",
+    "alt": "An exhibitor sharing robot models with visitors",
+    "summary": "Workshops, STEM activities and the robotics community: there is always another question worth exploring.",
+    "sections": [
+      {
+        "heading": "Make room for discovery",
+        "text": "Building, experimenting and sharing ideas are part of the academy’s hands-on approach. Workshops and STEM activities offer opportunities to connect those interests with other curious learners."
+      },
+      {
+        "heading": "Keep in touch with the academy",
+        "text": "Contact RobotYOUNG Academy for workshop announcements, STEM activities and competition updates. The team can confirm what is coming up and help you find a suitable opportunity."
+      }
+    ],
+    "ctaTarget": "contact",
+    "ctaLabel": "Ask about upcoming activities"
+  }
+]

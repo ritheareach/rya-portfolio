@@ -33,7 +33,9 @@ details of every page.
 | Change | File or folder |
 | --- | --- |
 | Academy content, contact details, shared header/footer | `src/site-template.html` |
-| Story copy and page generation | `scripts/build_pages.py` |
+| News/blog copy | `src/content/news.json` |
+| Gallery and robot entries, order, and captions | `src/content/gallery.json`, `src/content/robots.json` |
+| Page generation | `scripts/build_pages.py` |
 | Styling | `public/assets/css/styles.css` |
 | Browser interactions | `public/assets/js/script.js` |
 | Gallery photographs | `public/assets/gallery/previews/` |
@@ -49,7 +51,7 @@ browser URLs or change the gallery fetch URL to be relative to `assets/js/`.
 rya-portfolio/
 ├── README.md
 ├── docs/               # Project and page documentation
-├── src/                # Editable HTML template
+├── src/                # Editable HTML template and JSON content sources
 ├── scripts/            # Python build and preview tools
 └── public/             # Deploy this directory as the website root
     ├── *.html          # Generated public pages
@@ -63,20 +65,50 @@ rya-portfolio/
         └── rya-logo-*
 ```
 
-### Automatic galleries
+### JSON content sources
 
-Add optimized images to `public/assets/gallery/previews/` or `public/assets/robots/`. The
-preview server scans those folders on each page refresh. Images already featured
-elsewhere are excluded from the expandable galleries, and counts update
-automatically. Existing captions and alt text are preserved. For new images, add
-descriptions to `public/assets/gallery/PHOTO-NOTES.md` or `public/assets/robots/README.md`;
-otherwise a readable filename is used as a label. Use descriptive filenames
-rather than camera-generated names for new uploads.
+Edit `src/content/gallery.json`, `src/content/robots.json`, and
+`src/content/news.json`. They are prefilled with the existing content.
+See the [JSON editing guide](docs/PROJECT-STRUCTURE.md#json-content-editing-guide)
+for complete examples, field definitions, and troubleshooting.
 
-Before publishing to static hosting, run `python3 scripts/build_galleries.py` to refresh
-`public/assets/image-catalog.json`. Static hosting cannot scan new folders at runtime;
-rebuild and republish the catalog whenever images change. The HTML galleries
-remain as a fallback if the catalog cannot load.
+For a gallery photo or robot, upload the image to the corresponding folder in
+`public/assets/`, then add an entry to the JSON array:
+
+```json
+{
+  "src": "assets/gallery/previews/classroom.webp",
+  "caption": "Building together"
+}
+```
+
+Gallery and robot entries contain only `src` and `caption`. `src` is relative
+to `public/` (do not include `public/` in it). `caption` controls the visible
+text and is also used as the image's accessibility text. There are no separate
+alt or subtitle fields. All visible captions live in these JSON sources.
+Do not edit `public/assets/image-catalog.json` directly: it is generated, and
+the preview server bypasses it in favor of the source JSON.
+Array order controls display order; remove an entry to hide it from the live
+gallery. Uploading an image alone no longer adds it automatically. The existing
+same-page image exclusions still apply, including the duplicate smart-car photo.
+The HTML galleries remain as a fallback if JavaScript or catalog loading fails;
+edit the template separately if you need to update that fallback.
+
+For news, duplicate an object in `src/content/news.json` and edit its fields:
+`slug`, `category`, `title`, `image`, `alt`, `summary`, `sections`, `ctaTarget`,
+and `ctaLabel`. Each section has `heading` and `text`. Text is plain text, not
+HTML. The image is a filename inside `public/assets/gallery/previews/`.
+Use a unique lowercase hyphen-separated slug; it becomes the article filename.
+Do not use existing navigation page names as slugs. `ctaTarget` is a page name
+without `.html`: `index`, `about`, `programs`, `projects`, `gallery`, `news`, or
+`contact`. The first story is featured on the homepage and news page, so keep at
+least one story. Removing a story removes it from listings; delete its old
+generated `public/<slug>.html` separately if it should no longer be accessible.
+
+After editing, run both build commands in **Before publishing** below. The
+preview server reads gallery/robot JSON on refresh; news changes require a page
+rebuild. Publish the regenerated `public/` directory, not the source JSON files.
+Builds check image paths and news slugs and escape blog text for safe HTML.
 
 The page names and asset paths below are relative to `public/`; `src/` and
 `scripts/` paths are relative to the repository root:
@@ -90,7 +122,7 @@ The page names and asset paths below are relative to `public/`; `src/` and
   `stay-curious.html` — individual blog posts
 - `src/site-template.html` — shared header/footer and academy section content source
 - `scripts/build_pages.py` — generates the static pages; edit the template for academy
-  content and the `stories` list for blog posts, then run `python3 scripts/build_pages.py`.
+  content and `src/content/news.json` for blog posts, then run `python3 scripts/build_pages.py`.
   Generated HTML is checked in, so no build step is needed to preview or host it.
 - `scripts/build_galleries.py` — rebuilds the image catalog for static hosting
 - `scripts/preview.py` — serves the website locally with a live image catalog

@@ -93,17 +93,16 @@ async function refreshGalleries() {
     );
     const images = catalog[key].filter((image) => !used.has(image.src));
     const figures = images.map((image) => {
-      if (existing.has(image.src)) return existing.get(image.src);
-      const figure = document.createElement("figure");
-      const frame = document.createElement("div");
+      const figure = existing.get(image.src) ?? document.createElement("figure");
+      const frame = figure.querySelector(".image-frame") ?? document.createElement("div");
       frame.className = "image-frame";
-      const img = document.createElement("img");
+      const img = frame.querySelector("img") ?? document.createElement("img");
       img.src = image.src;
-      img.alt = image.alt;
+      img.alt = image.caption;
       img.loading = "lazy";
       img.draggable = false;
-      const caption = document.createElement("figcaption");
-      caption.textContent = image.alt;
+      const caption = figure.querySelector("figcaption") ?? document.createElement("figcaption");
+      caption.textContent = image.caption;
       frame.append(img);
       figure.append(frame, caption);
       return figure;

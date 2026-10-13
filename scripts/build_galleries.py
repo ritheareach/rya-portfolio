@@ -1,53 +1,25 @@
-"""Generate the static gallery catalog from optimized image folders."""
+"""Generate the public image catalog from editable JSON sources."""
 
 import json
-import re
-from html.parser import HTMLParser
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent / "public"
-EXTENSIONS = {".webp", ".jpg", ".jpeg", ".png", ".avif"}
-
-
-class ImageNotes(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.notes = {}
-
-    def handle_starttag(self, tag, attrs):
-        attrs = dict(attrs)
-        if tag == "img":
-            self.notes[attrs["src"]] = attrs.get("alt", "")
+ROOT = Path(__file__).resolve().parent.parent
 
 
 def build_catalog(write=True):
-    parser = ImageNotes()
-    parser.feed((ROOT / "index.html").read_text())
-    notes = parser.notes
-    for folder, document in [("gallery/previews", "gallery/PHOTO-NOTES.md"),
-                             ("robots", "robots/README.md")]:
-        for line in (ROOT / "assets" / document).read_text().splitlines():
-            match = re.search(r"\[([^]]+)\]\([^)]+\)", line)
-            if match:
-                filename = Path(match[1]).stem + ".webp"
-                description = line.split("|")[-2].strip()
-                notes.setdefault(f"assets/{folder}/{filename}", description)
-    catalog = {}
-    for key, folder in [("gallery", "assets/gallery/previews"), ("robots", "assets/robots")]:
-        entries = []
-        for path in sorted((ROOT / folder).iterdir()):
-            if not path.is_file() or path.suffix.lower() not in EXTENSIONS:
-                continue
-            if path.name.endswith("hero-smart-car.webp") or path.stem.endswith("-hero"):
-                continue
-            src = path.relative_to(ROOT).as_posix()
-            source_name = re.sub(r"^\d{3}-", "", path.name)
-            source = path.with_name(source_name).relative_to(ROOT).as_posix()
-            label = notes.get(src) or notes.get(source) or re.sub(r"[_-]+", " ", Path(source_name).stem).strip()
-            entries.append({"src": src, "alt": label})
-        catalog[key] = entries
+    catalog = {
+        key: json.loads((ROOT / "src/content" / f"{key}.json").read_text())
+        for key in ("gallery", "robots")
+    }
+    for key, entries in catalog.items():
+        for entry in entries:
+            if not isinstance(entry["caption"], str):
+                raise ValueError(f"{key}: caption must be text")
+            image = (ROOT / "public" / entry["src"]).resolve()
+            if not image.is_relative_to(ROOT / "public/assets") or not image.is_file():
+                raise ValueError(f"{key}: image not found in public/assets: {entry['src']}")
     if write:
-        (ROOT / "assets/image-catalog.json").write_text(json.dumps(catalog, indent=2) + "\n")
+        (ROOT / "public/assets/image-catalog.json").write_text(json.dumps(catalog, indent=2) + "\n")
     return catalog
 
 

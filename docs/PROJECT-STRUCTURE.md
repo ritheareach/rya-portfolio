@@ -13,6 +13,7 @@ RobotYOUNG Academy is a responsive, static website presenting a STEM learning ac
 | Frontend | HTML, shared CSS, and vanilla JavaScript |
 | Page generation | Python standard-library script (`scripts/build_pages.py`) |
 | Image catalog | Python standard-library script (`scripts/build_galleries.py`) |
+| Editable collections | JSON sources for gallery photos, robot images, and news stories in `src/content/` |
 | Local preview | Python HTTP server (`scripts/preview.py`) |
 | Typography | Locally hosted Nunito font |
 | Hosting model | Static files; no production application server required |
@@ -37,6 +38,10 @@ rya-portfolio/
 ├── docs/
 │   └── PROJECT-STRUCTURE.md        # This project and page guide
 ├── src/
+│   ├── content/
+│   │   ├── gallery.json            # Photo paths and captions, in display order
+│   │   ├── robots.json             # Robot paths and captions, in display order
+│   │   └── news.json               # Story metadata, body sections, and links
 │   └── site-template.html          # Editable layout and academy content source
 ├── scripts/
 │   ├── build_pages.py              # Generates public HTML pages
@@ -84,13 +89,14 @@ rya-portfolio/
 | --- | --- | --- |
 | `docs/` | Project structure and page documentation | Edit directly; not part of the hosted site |
 | `src/` | Shared HTML layout and academy content | Edit the template, then rebuild public pages |
+| `src/content/` | Editable gallery, robot, and news JSON sources | Edit collections here; rebuild the catalog or pages before publishing |
 | `scripts/` | Python page generation, catalog generation, and local preview | Development tools; not required on the production host |
 | `public/` | Complete website document root | Publish this folder's contents; HTML pages are generated |
 | `public/assets/css/` | Shared website stylesheet | Edit directly; included in deployment |
 | `public/assets/js/` | Browser interactions | Edit directly; distinct from Python tooling in `scripts/` |
 | `public/assets/fonts/` | Local font and license | Included in deployment |
-| `public/assets/gallery/` | Academy photographs, preview images, and reference notes | Add optimized images in `previews/`, update notes, and rebuild the catalog |
-| `public/assets/robots/` | Robot imagery and reference notes | Add optimized images, update notes, and rebuild the catalog |
+| `public/assets/gallery/` | Academy photographs, preview images, and reference notes | Add optimized images in `previews/`, update `src/content/gallery.json`, and rebuild the catalog |
+| `public/assets/robots/` | Robot imagery and reference notes | Add optimized images, update `src/content/robots.json`, and rebuild the catalog |
 
 There are no public HTML pages, `styles.css`, `script.js`, or `assets/` folder
 at the repository root. Do not recreate those old paths when updating the site.
@@ -113,7 +119,7 @@ Editable academy content is separated into `src/`, and development tools into
 - Assigns page-specific browser titles and active navigation states.
 - Converts known template section links into links to the corresponding pages.
 - Builds the homepage from the hero section, an academy page-link grid, and a featured story.
-- Builds `news.html` and the three story pages from its `stories` list.
+- Builds `news.html` and story pages from `src/content/news.json`.
 - Writes the legacy `franchise.html` redirect.
 
 **Edit the source, not only the generated page:** manual changes to generated HTML can be overwritten the next time `build_pages.py` runs.
@@ -122,11 +128,11 @@ Editable academy content is separated into `src/`, and development tools into
 | --- | --- |
 | Header, footer, hero, academy sections, contact information | `src/site-template.html` |
 | Page section assignments and generated page headings | `pages` mapping in `scripts/build_pages.py` |
-| Story titles, summaries, body text, images, and related calls to action | `stories` list in `scripts/build_pages.py` |
+| Story titles, summaries, body text, images, and related calls to action | `src/content/news.json` |
 | Homepage exploration grid and news listing layout | Generation code in `scripts/build_pages.py` |
 | Colors, typography, spacing, layouts, and responsive rules | `public/assets/css/styles.css` |
 | Menu, enquiry selection, Gmail draft, gallery updates | `public/assets/js/script.js` |
-| Image descriptions | `public/assets/gallery/PHOTO-NOTES.md` and `public/assets/robots/README.md` |
+| Gallery/robot order, image paths, and captions | `src/content/gallery.json` and `src/content/robots.json` |
 
 `site-template.html` is a source document, not a primary visitor destination. Some template content is not selected into the public pages; its presence alone does not mean visitors see it.
 
@@ -243,19 +249,19 @@ Module identifiers run from `RYA-L1A` through `RYA-L4D`.
 
 **Gallery behavior:** JavaScript refreshes the robot collection from `assets/image-catalog.json`; existing HTML remains usable if catalog loading fails.
 
-**Source:** template sections `projects` and `robots`.
+**Source:** template sections `projects` and `robots` provide layout and fallback figures; `src/content/robots.json` controls the refreshed robot images and captions.
 
 ### 4.5 Gallery — `gallery.html`
 
 **Purpose:** present academy life, student activities, and community photographs.
 
-**Content:** a featured photo grid with captions and descriptive alt text, followed by an expandable archive of additional academy photos.
+**Content:** a featured photo grid with captions (also used as image alt text), followed by an expandable archive of additional academy photos.
 
 **Visitor actions:** browse images and expand the archive. There is no full-size image viewer or lightbox.
 
 **Gallery behavior:** the image catalog supplies the collection and JavaScript updates the “Explore … more academy photos” count. Images featured elsewhere on the same page are excluded from the refreshed collection. Static HTML is retained as a fallback.
 
-**Source:** template section `gallery`, optimized images in `assets/gallery/previews/`, and the image catalog.
+**Source:** `src/content/gallery.json` controls refreshed photos and captions; template section `gallery` provides layout and fallback figures. Optimized images live in `assets/gallery/previews/`.
 
 ### 4.6 News and stories — `news.html`
 
@@ -272,7 +278,7 @@ Module identifiers run from `RYA-L1A` through `RYA-L4D`.
 
 **Limits:** stories are static editorial content, not dated event announcements. There is no CMS, search, category filtering, or pagination.
 
-**Source:** `stories` list and news-generation code in `build_pages.py`, not the template’s `news` section.
+**Source:** `src/content/news.json` and news-generation code in `build_pages.py`, not the template’s `news` section.
 
 ### 4.7 Academy-highlight story — `beyond-the-classroom.html`
 
@@ -304,7 +310,7 @@ Module identifiers run from `RYA-L1A` through `RYA-L4D`.
 
 **Visitor actions:** return to all stories, contact the academy about upcoming activities, or read another story.
 
-**Shared story layout:** all three stories include an academy byline, lead paragraph, main image, two body sections, a relevant call to action, and links to the other stories. Their source is the `stories` list in `build_pages.py`.
+**Shared story layout:** all three stories include an academy byline, lead paragraph, main image, two body sections, a relevant call to action, and links to the other stories. Their source is `src/content/news.json`.
 
 ### 4.10 Contact and franchise — `contact.html`
 
@@ -337,13 +343,134 @@ Module identifiers run from `RYA-L1A` through `RYA-L4D`.
 ## 5. Image and gallery pipeline
 
 1. Optimized academy images live in `assets/gallery/previews/`; optimized robot images live in `assets/robots/`.
-2. `build_galleries.py` scans supported image formats and builds separate `gallery` and `robots` arrays of `{src, alt}` entries.
-3. Descriptions come from homepage image alt text and the image-reference Markdown files, with readable filenames as a fallback. Hero-only images are excluded from the catalog.
+2. `build_galleries.py` reads `src/content/gallery.json` and `src/content/robots.json` and builds the public catalog, checking that referenced images exist.
+3. Entries contain only `src` and `caption`. The caption supplies both visible text and image accessibility text, even for existing figures. Array order controls display order. Uploads must be added to the JSON explicitly; Markdown image notes are reference documents, not active content sources.
 4. `script.js` loads the catalog, reuses existing figures where possible, creates figures for new images, and updates featured and expandable grids.
-5. `preview.py` builds the catalog in memory when `/assets/image-catalog.json` is requested, so new images appear on refresh without rewriting the static catalog.
+5. `preview.py` reads the source JSON in memory when `/assets/image-catalog.json` is requested, so gallery edits appear on refresh without rewriting the static catalog.
 6. Static hosting uses the checked-in JSON file. Rebuild and republish it whenever images change.
 
 Images are made non-draggable in the browser; this is an interaction choice, not image-copy protection.
+
+### JSON content editing guide
+
+The three source files contain JSON arrays. Use double-quoted keys and text,
+separate entries with commas, and do not add comments or trailing commas.
+Image files are stored separately; JSON contains their paths, not image data.
+There is no CSV importer, database, or admin dashboard.
+
+#### Gallery photos and robots
+
+Edit `src/content/gallery.json` for academy photos and
+`src/content/robots.json` for the robot showcase. Both use exactly the same
+two-field format. For example, a robot collection can contain:
+
+```json
+[
+  {
+    "src": "assets/robots/010-robot-02.webp",
+    "caption": "Mini Dynamo One"
+  }
+]
+```
+
+| Field | Meaning |
+| --- | --- |
+| `src` | Image path relative to `public/`; the file must exist inside `public/assets/` |
+| `caption` | Plain-text caption shown below the image; also used as its HTML `alt` text |
+
+Do not add separate `alt`, `title`, or `description` fields. There are no
+subtitle rows. Choose captions that identify the image for both visible and
+screen-reader use.
+
+- **Add:** place an optimized image in `public/assets/gallery/previews/` or
+  `public/assets/robots/`, then append its `src` and `caption` object to the
+  corresponding source array. Uploading a file alone does not add it.
+- **Edit:** change `caption` to rename a card, or `src` to use another image.
+- **Reorder:** move objects within the array. The first entries fill the
+  featured grid; remaining entries appear in the expandable archive. The
+  number of featured slots comes from the template, not another JSON field.
+- **Remove:** delete the object to remove it from the refreshed collection.
+  This does not delete the image file or the template's fallback figure.
+
+Images already used outside the gallery on the same page are excluded.
+`assets/robots/005-robot-23.webp` is also excluded because it duplicates the
+hero robot. Archive counts reflect displayed entries after these exclusions.
+An empty image array hides the archive and leaves the featured grid empty.
+
+JavaScript replaces captions even on existing template figures. If JavaScript
+is disabled or the catalog fails to load, the original HTML figures remain;
+JSON edits do not update that fallback. To change the fallback too, edit
+`src/site-template.html` and rebuild pages.
+
+#### News and blog posts
+
+Edit `src/content/news.json`. News retains its own richer format; the
+two-field image format does not apply to articles. This shortened version of
+an existing story illustrates every required field:
+
+```json
+[
+  {
+    "slug": "beyond-the-classroom",
+    "category": "Academy highlight",
+    "title": "Learning doesn’t stop at the classroom door.",
+    "image": "050-IMG_20260718_094400.webp",
+    "alt": "Students working on robots together in the classroom",
+    "summary": "Our learners take their ideas into the wider robotics community.",
+    "sections": [
+      {
+        "heading": "Ideas become something you can build",
+        "text": "Learners turn ideas into builds they can test and improve."
+      }
+    ],
+    "ctaTarget": "projects",
+    "ctaLabel": "Explore student projects"
+  }
+]
+```
+
+| Field | Meaning |
+| --- | --- |
+| `slug` | Unique lowercase letters/numbers separated by hyphens; generates `public/<slug>.html` |
+| `category`, `title`, `summary` | Category label, article heading, and introduction/listing summary |
+| `image` | Existing filename in `public/assets/gallery/previews/`, without a directory prefix |
+| `alt` | Accessibility description for the article image |
+| `sections` | Array of body sections, each with plain-text `heading` and `text` |
+| `ctaTarget` | Destination page name without `.html`: `index`, `about`, `programs`, `projects`, `gallery`, `news`, or `contact` |
+| `ctaLabel` | Visible call-to-action text |
+
+Duplicate an existing object to add a story, assign a new slug, and edit its
+content. The first object is featured on the homepage and news listing; keep
+at least one story. Body text is escaped for HTML, so HTML tags are displayed
+as text rather than interpreted as markup. JSON can contain Khmer and other
+Unicode text directly.
+
+The builder rejects duplicate or invalid slugs and reserved names (`index`,
+`news`, `franchise`, and the navigation page names). It also checks the image
+filename and CTA destination. Removing or renaming a story updates listings
+and related-story links on rebuild, but does not delete its old generated
+page. Delete the obsolete `public/<old-slug>.html` separately if it should no
+longer be accessible, and ensure your hosting deployment removes it too.
+
+#### Preview and publishing behavior
+
+| Change | Live preview with `scripts/preview.py` | Static hosting or plain HTTP server |
+| --- | --- | --- |
+| Gallery/robot entry, order, or caption | Save source JSON and refresh the browser | Run `python3 scripts/build_galleries.py`, then publish the updated catalog and any new images |
+| News story | Run `python3 scripts/build_pages.py`, then refresh | Run the same build, then publish generated pages and any new images |
+| Template or fallback figures | Run `python3 scripts/build_pages.py`, then refresh | Run the same build, then publish generated pages |
+
+**Do not edit `public/assets/image-catalog.json` directly.** It is generated
+output and is overwritten by the catalog build. The live preview endpoint
+reads the source files instead, so edits to that output file will not appear
+there. Markdown photo notes remain references, not content sources.
+
+If a change is missing, check that you edited the correct source file, saved
+valid JSON, and refreshed or rebuilt as shown above. For a missing image,
+check its exact filename and whether an exclusion applies. Read the terminal
+error if a build fails. Restart the preview server after changing Python
+scripts, since its imported code does not reload automatically. If browser
+JavaScript changed, use a hard refresh to avoid an old cached script.
 
 ## 6. Editing, preview, and publishing
 
@@ -361,16 +488,17 @@ Open `http://localhost:8000` on the machine running the server. The server binds
 ### Update content and prepare static files
 
 ```bash
-# After editing the template or story definitions:
+# After editing src/site-template.html or src/content/news.json:
 python3 scripts/build_pages.py
 
-# After changing images or their descriptions:
+# After editing src/content/gallery.json or src/content/robots.json:
 python3 scripts/build_galleries.py
 ```
 
-When updating both content and imagery, generate pages first, then the catalog, because catalog generation reads homepage image descriptions.
+When updating content and imagery, run both commands. Catalog generation reads the JSON sources, not homepage image descriptions. See the README's JSON content guide for fields and examples.
 
-Page generation writes all 11 HTML files into `public/`. It does not overwrite
+Page generation writes the navigation pages and one page per news story into
+`public/` (11 HTML files with the current three stories). It does not overwrite
 `public/assets/css/styles.css` or `public/assets/js/script.js`, which are edited
 directly. Catalog generation writes `public/assets/image-catalog.json` and
 does not modify the image files.
@@ -386,7 +514,7 @@ python3 -m http.server 8001 --bind 127.0.0.1 --directory public
 ```
 
 Open `http://localhost:8001` on the host machine. Unlike `scripts/preview.py`,
-this serves the generated catalog from disk instead of scanning images on each
+this serves the generated catalog from disk instead of reading source JSON on each
 catalog request. Check all navigation pages and stories, the franchise redirect,
 CSS and font loading, program disclosures, gallery expansion, and mobile menu.
 Check that a program enquiry preselects the contact form's interest and that
@@ -395,7 +523,7 @@ Stop the static test server with Ctrl+C.
 
 ## 7. Current scope and future work
 
-**Implemented:** responsive public pages, program disclosures, curriculum listings, project imagery, expandable galleries, static story pages, shared navigation, contact links, Gmail draft preparation, and the legacy franchise redirect.
+**Implemented:** responsive public pages, program disclosures, curriculum listings, project imagery, JSON-managed gallery and robot collections, JSON-generated news and story pages, expandable galleries, shared navigation, contact links, Gmail draft preparation, and the legacy franchise redirect.
 
 **Not implemented:** backend enquiry processing, online registration, student accounts, payments, ERP, inventory management, franchise applications, a franchise management platform, a news CMS, dedicated course-detail pages, or an embedded Google Map.
 
