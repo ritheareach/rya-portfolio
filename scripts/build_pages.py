@@ -3,6 +3,11 @@ from pathlib import Path
 from html import escape
 import json
 import re
+from build_images import build_images
+from build_galleries import build_catalog
+
+build_images()
+build_catalog()
 
 ROOT = Path(__file__).resolve().parent.parent
 PUBLIC = ROOT / "public"
@@ -52,21 +57,21 @@ for record in records:
     if record["ctaTarget"] not in {"index", "news", *pages}:
         raise ValueError(f"Unknown CTA page: {record['ctaTarget']}")
     image = record["image"]
-    if Path(image).name != image or not (PUBLIC / "assets/gallery/previews" / image).is_file():
-        raise ValueError(f"News image not found in gallery/previews: {image}")
+    if Path(image).name != image or not (PUBLIC / "assets/gallery" / image).is_file():
+        raise ValueError(f"News image not found in gallery: {image}")
     stories.append((slug, *(escape(record[key]) for key in ("category", "title", "image", "alt", "summary")),
                     [(escape(section["heading"]), escape(section["text"])) for section in record["sections"]],
                     record["ctaTarget"], escape(record["ctaLabel"])))
 
 def card(story, featured=False):
     slug, category, title, image, alt, summary, *_ = story
-    return f'<article class="blog-card {"blog-featured" if featured else ""}"><a class="blog-image" href="{slug}.html" tabindex="-1" aria-hidden="true"><img src="assets/gallery/previews/{image}" alt="{alt}" /></a><div class="blog-card-copy"><p class="eyebrow">{category}</p><h2><a href="{slug}.html">{title}</a></h2><p>{summary}</p><a class="secondary-link" href="{slug}.html">Read the story <span aria-hidden="true">↗</span></a></div></article>'
+    return f'<article class="blog-card {"blog-featured" if featured else ""}"><a class="blog-image" href="{slug}.html" tabindex="-1" aria-hidden="true"><img src="assets/gallery/{image}" alt="{alt}" /></a><div class="blog-card-copy"><p class="eyebrow">{category}</p><h2><a href="{slug}.html">{title}</a></h2><p>{summary}</p><a class="secondary-link" href="{slug}.html">Read the story <span aria-hidden="true">↗</span></a></div></article>'
 
 news = '<section class="shell blog-index"><div class="blog-heading"><p class="eyebrow">NEWS &amp; STORIES</p><h1>Small discoveries.<br /><span>Big possibilities.</span></h1><p>Ideas, learning adventures and life in our academy community.</p></div>'
 news += card(stories[0], True) + '<div class="blog-grid">' + ''.join(card(s) for s in stories[1:]) + '</div></section>'
 publish("news", "News & stories", news, "news")
 for slug, category, title, image, alt, summary, paragraphs, target, label in stories:
-    content = f'<article class="blog-post shell"><a class="secondary-link" href="news.html">← All stories</a><header class="post-heading"><p class="eyebrow">{category}</p><h1>{title}</h1><p class="post-lede">{summary}</p><p class="post-byline">By RobotYOUNG Academy · Academy stories</p></header><img class="post-image" src="assets/gallery/previews/{image}" alt="{alt}" /><div class="post-body">'
+    content = f'<article class="blog-post shell"><a class="secondary-link" href="news.html">← All stories</a><header class="post-heading"><p class="eyebrow">{category}</p><h1>{title}</h1><p class="post-lede">{summary}</p><p class="post-byline">By RobotYOUNG Academy · Academy stories</p></header><img class="post-image" src="assets/gallery/{image}" alt="{alt}" /><div class="post-body">'
     content += ''.join(f'<h2>{heading}</h2><p>{text}</p>' for heading, text in paragraphs)
     content += f'<a class="button" href="{target}.html">{label} ↗</a></div><aside class="post-next"><h2>Keep exploring</h2>'
     content += ''.join(f'<a class="secondary-link" href="{other[0]}.html">{other[2]} →</a>' for other in stories if other[0] != slug) + '</aside></article>'

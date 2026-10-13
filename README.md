@@ -38,7 +38,7 @@ details of every page.
 | Page generation | `scripts/build_pages.py` |
 | Styling | `public/assets/css/styles.css` |
 | Browser interactions | `public/assets/js/script.js` |
-| Gallery photographs | `public/assets/gallery/previews/` |
+| Gallery photographs | `public/assets/gallery/` |
 | Robot images | `public/assets/robots/` |
 | Project documentation | `docs/PROJECT-STRUCTURE.md` |
 
@@ -77,7 +77,7 @@ For a gallery photo or robot, upload the image to the corresponding folder in
 
 ```json
 {
-  "src": "assets/gallery/previews/classroom.webp",
+  "src": "assets/gallery/classroom.webp",
   "caption": "Building together"
 }
 ```
@@ -97,7 +97,7 @@ edit the template separately if you need to update that fallback.
 For news, duplicate an object in `src/content/news.json` and edit its fields:
 `slug`, `category`, `title`, `image`, `alt`, `summary`, `sections`, `ctaTarget`,
 and `ctaLabel`. Each section has `heading` and `text`. Text is plain text, not
-HTML. The image is a filename inside `public/assets/gallery/previews/`.
+HTML. The image is a filename inside `public/assets/gallery/`.
 Use a unique lowercase hyphen-separated slug; it becomes the article filename.
 Do not use existing navigation page names as slugs. `ctaTarget` is a page name
 without `.html`: `index`, `about`, `programs`, `projects`, `gallery`, `news`, or
@@ -131,14 +131,11 @@ The page names and asset paths below are relative to `public/`; `src/` and
   preparation
 - `assets/rya-logo-horizontal.png` and `assets/rya-logo-square.jpg` — supplied
   academy logos; square version cropped to remove outer whitespace
-- `assets/gallery/academy-*.jpg` — six supplied graduation and community photos,
-  resized to 1600px for the website; original uploads are retained locally.
-- `assets/gallery/IMG_*.jpg`, `DSC*.jpg`, `DJI_*.jpg` and `PXL_*.jpg` — 43
-  additional photos downloaded on 8 October 2026, 14:03–14:10, shown in the
-  expandable gallery with individual captions and descriptive alt text.
+- `src/assets/gallery/` — retained larger JPG source copies, kept outside the
+  deployable website. Original uploads in Downloads remain unchanged.
 - `assets/gallery/PHOTO-NOTES.md` — filename-to-alt-text reference for all 49
   gallery photos. Original Downloads files are unchanged.
-- `assets/gallery/previews/` — compressed WebP previews (maximum 800px) for
+- `assets/gallery/` — compressed website-ready WebP images (maximum 1200px) for
   gallery and classroom-led homepage display. Images are display-only, with
   individual captions and alt text; they do not open full-size files on click.
 - `assets/robots/` — optimized robot images and source-filename reference notes.
@@ -157,9 +154,23 @@ Maps links provide alternative contact routes. No backend or CMS is configured.
 After content and image changes, run these commands from the project root:
 
 ```bash
+python3 -m pip install -r scripts/requirements.txt
 python3 scripts/build_pages.py
 python3 scripts/build_galleries.py
 ```
+
+Both builds convert newly added JPG, PNG, and other Pillow-supported static
+images in `public/assets/gallery/` and `public/assets/robots/` to WebP.
+Gallery and robot images are limited to 1200px on the longest
+side, without upscaling. Transparency and EXIF orientation are preserved.
+Original uploads move to `src/assets/gallery/` or `src/assets/robots/`;
+existing WebP files are not re-encoded. The build updates matching template,
+gallery/robot JSON, and news image references automatically. Add your content
+entry as usual; conversion does not add unlisted images to the gallery.
+Filename collisions and animated uploads fail rather than overwrite images
+or silently discard animation. Logos and assets outside these two folders
+are unchanged. Run the page build after the catalog build if an upload was
+referenced by a page. Previously archived JPG files are not bulk-converted.
 
 Configure static hosting to serve `public/` as its document root, or upload
 the contents of `public/` to the host's website root. Do not publish the repository

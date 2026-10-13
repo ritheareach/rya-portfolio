@@ -24,5 +24,8 @@ def build_catalog(write=True):
 
 
 if __name__ == "__main__":
+    from build_images import build_images
+
+    build_images()
     catalog = build_catalog()
     print({key: len(images) for key, images in catalog.items()})

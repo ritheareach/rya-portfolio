@@ -12,7 +12,7 @@ RobotYOUNG Academy is a responsive, static website presenting a STEM learning ac
 | --- | --- |
 | Frontend | HTML, shared CSS, and vanilla JavaScript |
 | Page generation | Python standard-library script (`scripts/build_pages.py`) |
-| Image catalog | Python standard-library script (`scripts/build_galleries.py`) |
+| Image catalog | Python script (`scripts/build_galleries.py`); Pillow for upload conversion |
 | Editable collections | JSON sources for gallery photos, robot images, and news stories in `src/content/` |
 | Local preview | Python HTTP server (`scripts/preview.py`) |
 | Typography | Locally hosted Nunito font |
@@ -72,9 +72,7 @@ rya-portfolio/
 │       │   └── OFL-Nunito.txt      # Font license
 │       ├── gallery/
 │       │   ├── PHOTO-NOTES.md      # Photo descriptions and source references
-│       │   ├── *.jpg              # Academy and activity photographs
-│       │   └── previews/
-│       │       └── *.webp          # Optimized display images
+│       │   └── *.webp             # Optimized display images
 │       └── robots/
 │           ├── README.md           # Robot image descriptions and references
 │           └── *.webp             # Optimized robot images and hero cutout
@@ -95,7 +93,7 @@ rya-portfolio/
 | `public/assets/css/` | Shared website stylesheet | Edit directly; included in deployment |
 | `public/assets/js/` | Browser interactions | Edit directly; distinct from Python tooling in `scripts/` |
 | `public/assets/fonts/` | Local font and license | Included in deployment |
-| `public/assets/gallery/` | Academy photographs, preview images, and reference notes | Add optimized images in `previews/`, update `src/content/gallery.json`, and rebuild the catalog |
+| `public/assets/gallery/` | Optimized academy images and reference notes | Add optimized images here, update `src/content/gallery.json`, and rebuild the catalog |
 | `public/assets/robots/` | Robot imagery and reference notes | Add optimized images, update `src/content/robots.json`, and rebuild the catalog |
 
 There are no public HTML pages, `styles.css`, `script.js`, or `assets/` folder
@@ -261,7 +259,7 @@ Module identifiers run from `RYA-L1A` through `RYA-L4D`.
 
 **Gallery behavior:** the image catalog supplies the collection and JavaScript updates the “Explore … more academy photos” count. Images featured elsewhere on the same page are excluded from the refreshed collection. Static HTML is retained as a fallback.
 
-**Source:** `src/content/gallery.json` controls refreshed photos and captions; template section `gallery` provides layout and fallback figures. Optimized images live in `assets/gallery/previews/`.
+**Source:** `src/content/gallery.json` controls refreshed photos and captions; template section `gallery` provides layout and fallback figures. Optimized images live in `assets/gallery/`.
 
 ### 4.6 News and stories — `news.html`
 
@@ -342,7 +340,7 @@ Module identifiers run from `RYA-L1A` through `RYA-L4D`.
 
 ## 5. Image and gallery pipeline
 
-1. Optimized academy images live in `assets/gallery/previews/`; optimized robot images live in `assets/robots/`.
+1. Optimized academy images live in `assets/gallery/`; optimized robot images live in `assets/robots/`. Larger JPG source copies are retained in `src/assets/gallery/`, outside the deployable `public/` directory.
 2. `build_galleries.py` reads `src/content/gallery.json` and `src/content/robots.json` and builds the public catalog, checking that referenced images exist.
 3. Entries contain only `src` and `caption`. The caption supplies both visible text and image accessibility text, even for existing figures. Array order controls display order. Uploads must be added to the JSON explicitly; Markdown image notes are reference documents, not active content sources.
 4. `script.js` loads the catalog, reuses existing figures where possible, creates figures for new images, and updates featured and expandable grids.
@@ -382,7 +380,7 @@ Do not add separate `alt`, `title`, or `description` fields. There are no
 subtitle rows. Choose captions that identify the image for both visible and
 screen-reader use.
 
-- **Add:** place an optimized image in `public/assets/gallery/previews/` or
+- **Add:** place an optimized image in `public/assets/gallery/` or
   `public/assets/robots/`, then append its `src` and `caption` object to the
   corresponding source array. Uploading a file alone does not add it.
 - **Edit:** change `caption` to rename a card, or `src` to use another image.
@@ -433,7 +431,7 @@ an existing story illustrates every required field:
 | --- | --- |
 | `slug` | Unique lowercase letters/numbers separated by hyphens; generates `public/<slug>.html` |
 | `category`, `title`, `summary` | Category label, article heading, and introduction/listing summary |
-| `image` | Existing filename in `public/assets/gallery/previews/`, without a directory prefix |
+| `image` | Existing filename in `public/assets/gallery/`, without a directory prefix |
 | `alt` | Accessibility description for the article image |
 | `sections` | Array of body sections, each with plain-text `heading` and `text` |
 | `ctaTarget` | Destination page name without `.html`: `index`, `about`, `programs`, `projects`, `gallery`, `news`, or `contact` |
@@ -474,8 +472,14 @@ JavaScript changed, use a hard refresh to avoid an old cached script.
 
 ## 6. Editing, preview, and publishing
 
-Python 3 is required; the build and preview tools use only the standard
-library. Run the commands below from the repository root.
+Python 3 is required. Preview uses only the standard library; builds require
+Pillow (`python3 -m pip install -r scripts/requirements.txt`). Both builds
+convert new Pillow-supported static image uploads in the public gallery and
+robot folders to WebP, retain originals under `src/assets/`, and update
+template and JSON references. Existing WebP files are left unchanged; gallery
+and robot images are capped at 1200px. Filename collisions
+and animated uploads fail rather than losing data. Previously archived
+source JPGs are not bulk-converted. Run the commands below from the repository root.
 
 ### Preview the current site
 
