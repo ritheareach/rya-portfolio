@@ -1,1 +1,3 @@
 /.amp/in/
+__pycache__/
+*.py[cod]

@@ -6,7 +6,7 @@
     },
     {
       "src": "assets/gallery/previews/002-IMG_6621.webp",
-      "alt": "Two students working together at a laptop beside wheeled robots and electronics"
+      "alt": "Two students working at a laptop beside wheeled robots and electronics"
     },
     {
       "src": "assets/gallery/previews/003-IMG_5513.webp",
@@ -14,7 +14,7 @@
     },
     {
       "src": "assets/gallery/previews/004-IMG_20260719_112234.webp",
-      "alt": "A student connecting wires on a green wheeled robot"
+      "alt": "A student wearing glasses connecting wires on a green robot with yellow wheels"
     },
     {
       "src": "assets/gallery/previews/005-DSC05635.webp",
@@ -142,7 +142,7 @@
     },
     {
       "src": "assets/gallery/previews/036-PXL_20260509_072045716.webp",
-      "alt": "A student exploring a three-dimensional model on a laptop"
+      "alt": "A student viewing a three-dimensional model on a laptop with an external keyboard"
     },
     {
       "src": "assets/gallery/previews/037-IMG_6081.webp",
@@ -158,7 +158,7 @@
     },
     {
       "src": "assets/gallery/previews/041-IMG_9792.webp",
-      "alt": "An adult guiding a student working on a circuit board"
+      "alt": "An adult guiding a student working on a small circuit board at a table"
     },
     {
       "src": "assets/gallery/previews/042-IMG_1725.webp",
@@ -166,7 +166,7 @@
     },
     {
       "src": "assets/gallery/previews/043-IMG_8650.webp",
-      "alt": "Children and adults gathered around a robotics demonstration at a public exhibition"
+      "alt": "Children and adults gathering around a robotics demonstration table at a public exhibition"
     },
     {
       "src": "assets/gallery/previews/044-classroom-programming.webp",
@@ -182,7 +182,7 @@
     },
     {
       "src": "assets/gallery/previews/047-IMG_0903.webp",
-      "alt": "A learner working on a circuit board beside a laptop"
+      "alt": "A learner working on a circuit board on a blue electronics mat beside a laptop"
     },
     {
       "src": "assets/gallery/previews/048-DSC05749.webp",
@@ -194,7 +194,7 @@
     },
     {
       "src": "assets/gallery/previews/050-IMG_20260718_094400.webp",
-      "alt": "Students building green wheeled robots around a classroom table with laptops and components"
+      "alt": "Students working on robots together in the classroom"
     },
     {
       "src": "assets/gallery/previews/051-DSC05747.webp",
@@ -206,7 +206,7 @@
     },
     {
       "src": "assets/gallery/previews/053-IMG_5976.webp",
-      "alt": "A student writing code on a laptop beside a robot"
+      "alt": "A student typing code on a laptop beside a wheeled robot and white enclosure"
     },
     {
       "src": "assets/gallery/previews/054-academy-group-visit.webp",
@@ -240,19 +240,19 @@
   "robots": [
     {
       "src": "assets/robots/001-robot-26.webp",
-      "alt": "A yellow and black robot chassis with four angled-roller mecanum wheels"
+      "alt": "Mecanum chassis, front view"
     },
     {
       "src": "assets/robots/002-robot-01.webp",
-      "alt": "A rendered flat robot platform with four black roller wheels and a central electronics module"
+      "alt": "Flat roller-wheel platform"
     },
     {
       "src": "assets/robots/003-robot-20.webp",
-      "alt": "A rendered robotic arm beside a green miniature conveyor carrying yellow blocks"
+      "alt": "Robotic arm and miniature conveyor"
     },
     {
       "src": "assets/robots/004-robot-17.webp",
-      "alt": "A gray and black robotic arm with a gripper displayed on a round platform"
+      "alt": "Gray robotic arm"
     },
     {
       "src": "assets/robots/005-robot-23.webp",
@@ -260,91 +260,91 @@
     },
     {
       "src": "assets/robots/006-robot-11.webp",
-      "alt": "An open-frame quadcopter with blue propellers"
+      "alt": "Open-frame quadcopter"
     },
     {
       "src": "assets/robots/007-robot-24.webp",
-      "alt": "A rendered six-legged spider robot with a green center viewed at an angle on a workshop surface"
+      "alt": "Spider robot, angled view"
     },
     {
       "src": "assets/robots/008-robot-13.webp",
-      "alt": "A front angled render of a yellow and black robot with four mecanum wheels"
+      "alt": "Yellow mecanum chassis"
     },
     {
       "src": "assets/robots/009-robot-09.webp",
-      "alt": "A rendered blue and yellow robot with four orange roller wheels and exposed circuit boards"
+      "alt": "Blue and yellow roller-wheel robot"
     },
     {
       "src": "assets/robots/010-robot-02.webp",
-      "alt": "A rendered black and yellow four-legged robot with a perforated body"
+      "alt": "Black and yellow four-legged robot"
     },
     {
       "src": "assets/robots/011-robot-19.webp",
-      "alt": "Two white and black shelf-style service robots, one carrying items on its trays"
+      "alt": "Service robot pair"
     },
     {
       "src": "assets/robots/012-robot-03.webp",
-      "alt": "A row of rendered weather-station models with blue solar panels and sensors on black display bases"
+      "alt": "Weather-station designs"
     },
     {
       "src": "assets/robots/013-robot-16.webp",
-      "alt": "A yellow and gray four-legged robot displayed beside a tablet showing robot illustrations"
+      "alt": "Walking robot and tablet"
     },
     {
       "src": "assets/robots/014-robot-27.webp",
-      "alt": "A rear angled render of a yellow and black chassis with four mecanum wheels"
+      "alt": "Mecanum chassis, rear view"
     },
     {
       "src": "assets/robots/015-robot-22.webp",
-      "alt": "A rendered metal robot chassis with four black mecanum wheels and a green circuit board"
+      "alt": "Metal mecanum-wheel chassis"
     },
     {
       "src": "assets/robots/016-robot-15.webp",
-      "alt": "A gray four-legged robot with a rectangular body and articulated legs on a dark background"
+      "alt": "Gray four-legged robot"
     },
     {
       "src": "assets/robots/017-robot-25.webp",
-      "alt": "A rendered spider-style robot with six articulated legs around a green central body"
+      "alt": "Spider robot, alternate view"
     },
     {
       "src": "assets/robots/018-robot-10.webp",
-      "alt": "A rendered cube-shaped frame holding stacked circuit boards with green corner supports"
+      "alt": "Stacked electronics module"
     },
     {
       "src": "assets/robots/019-robot-12.webp",
-      "alt": "A rendered yellow cylindrical robot with two front sensors and four roller wheels"
+      "alt": "Yellow cylindrical robot"
     },
     {
       "src": "assets/robots/020-robot-18.webp",
-      "alt": "A tall white and black service robot with four open shelves above a wheeled base"
+      "alt": "Shelf-style service robot"
     },
     {
       "src": "assets/robots/021-robot-06.webp",
-      "alt": "A rendered green tracked robot with metal treads on either side of its body"
+      "alt": "Green tracked robot"
     },
     {
       "src": "assets/robots/022-robot-04.webp",
-      "alt": "An angled view of a rendered fixed-wing aircraft with additional vertical propellers"
+      "alt": "Fixed-wing aircraft, angled view"
     },
     {
       "src": "assets/robots/023-robot-07.webp",
-      "alt": "A rendered yellow robotic arm with a small gripper mounted on a black base"
+      "alt": "Yellow robotic arm"
     },
     {
       "src": "assets/robots/024-robot-21.webp",
-      "alt": "A small white quadcopter with blue propeller guards and blue and orange propellers"
+      "alt": "Mini quadcopter"
     },
     {
       "src": "assets/robots/026-robot-08.webp",
-      "alt": "A rendered gray four-legged robot with circular joints and an AI FARM marking on its body"
+      "alt": "Gray four-legged robot"
     },
     {
       "src": "assets/robots/027-robot-05.webp",
-      "alt": "A front view of a rendered fixed-wing aircraft with vertical propellers under its wings"
+      "alt": "Fixed-wing aircraft, front view"
     },
     {
       "src": "assets/robots/028-robot-14.webp",
-      "alt": "A low-profile yellow mobile platform with a black top, emergency stop button and blue underlighting"
+      "alt": "Low-profile mobile platform"
     }
   ]
 }

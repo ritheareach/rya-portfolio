@@ -7,10 +7,11 @@ franchise enquiries, and contact options.
 
 ## Local preview
 
-No build step is required:
+Python 3 is required; no third-party packages are needed. Run commands from
+the repository root. No build step is required to preview the checked-in pages:
 
 ```bash
-python3 preview.py
+python3 scripts/preview.py
 ```
 
 Then open <http://localhost:8000> on the host machine. The preview server allows
@@ -20,20 +21,65 @@ load concurrently. It is not a production server.
 
 ## Structure
 
+The deployable website lives in `public/`, with browser styles in
+`public/assets/css/` and JavaScript in `public/assets/js/`. Editable academy
+content lives in `src/`; Python development tools live in `scripts/`.
+Generated pages should not be edited directly, because rebuilding overwrites them.
+See [the project and page guide](docs/PROJECT-STRUCTURE.md) for the full tree and
+details of every page.
+
+### Where to edit
+
+| Change | File or folder |
+| --- | --- |
+| Academy content, contact details, shared header/footer | `src/site-template.html` |
+| Story copy and page generation | `scripts/build_pages.py` |
+| Styling | `public/assets/css/styles.css` |
+| Browser interactions | `public/assets/js/script.js` |
+| Gallery photographs | `public/assets/gallery/previews/` |
+| Robot images | `public/assets/robots/` |
+| Project documentation | `docs/PROJECT-STRUCTURE.md` |
+
+HTML asset URLs are relative to the website root: `assets/css/styles.css`
+and `assets/js/script.js`. CSS URLs are relative to the stylesheet itself;
+the font reference is `../fonts/nunito-latin.woff2`. Do not add `public/` to
+browser URLs or change the gallery fetch URL to be relative to `assets/js/`.
+
+```text
+rya-portfolio/
+├── README.md
+├── docs/               # Project and page documentation
+├── src/                # Editable HTML template
+├── scripts/            # Python build and preview tools
+└── public/             # Deploy this directory as the website root
+    ├── *.html          # Generated public pages
+    └── assets/
+        ├── css/        # styles.css
+        ├── js/         # script.js
+        ├── fonts/
+        ├── gallery/
+        ├── robots/
+        ├── image-catalog.json
+        └── rya-logo-*
+```
+
 ### Automatic galleries
 
-Add optimized images to `assets/gallery/previews/` or `assets/robots/`. The
+Add optimized images to `public/assets/gallery/previews/` or `public/assets/robots/`. The
 preview server scans those folders on each page refresh. Images already featured
 elsewhere are excluded from the expandable galleries, and counts update
 automatically. Existing captions and alt text are preserved. For new images, add
-descriptions to `assets/gallery/PHOTO-NOTES.md` or `assets/robots/README.md`;
+descriptions to `public/assets/gallery/PHOTO-NOTES.md` or `public/assets/robots/README.md`;
 otherwise a readable filename is used as a label. Use descriptive filenames
 rather than camera-generated names for new uploads.
 
-Before publishing to static hosting, run `python3 build_galleries.py` to refresh
-`assets/image-catalog.json`. Static hosting cannot scan new folders at runtime;
+Before publishing to static hosting, run `python3 scripts/build_galleries.py` to refresh
+`public/assets/image-catalog.json`. Static hosting cannot scan new folders at runtime;
 rebuild and republish the catalog whenever images change. The HTML galleries
 remain as a fallback if the catalog cannot load.
+
+The page names and asset paths below are relative to `public/`; `src/` and
+`scripts/` paths are relative to the repository root:
 
 - `index.html` — academy homepage with links to the dedicated sections
 - `about.html`, `programs.html`, `projects.html`, `gallery.html`,
@@ -42,12 +88,14 @@ remain as a fallback if the catalog cannot load.
 - `franchise.html` — redirects old bookmarks to the combined contact page
 - `beyond-the-classroom.html`, `next-learning-adventure.html`,
   `stay-curious.html` — individual blog posts
-- `site-template.html` — shared header/footer and academy section content source
-- `build_pages.py` — generates the static pages; edit the template for academy
-  content and the `stories` list for blog posts, then run `python3 build_pages.py`.
+- `src/site-template.html` — shared header/footer and academy section content source
+- `scripts/build_pages.py` — generates the static pages; edit the template for academy
+  content and the `stories` list for blog posts, then run `python3 scripts/build_pages.py`.
   Generated HTML is checked in, so no build step is needed to preview or host it.
-- `styles.css` — responsive visual system and layout
-- `script.js` — mobile navigation, program enquiry selection, and email draft
+- `scripts/build_galleries.py` — rebuilds the image catalog for static hosting
+- `scripts/preview.py` — serves the website locally with a live image catalog
+- `assets/css/styles.css` — responsive visual system and layout
+- `assets/js/script.js` — mobile navigation, program enquiry selection, and email draft
   preparation
 - `assets/rya-logo-horizontal.png` and `assets/rya-logo-square.jpg` — supplied
   academy logos; square version cropped to remove outer whitespace
@@ -73,6 +121,28 @@ WhatsApp, telephone, email, and Google
 Maps links provide alternative contact routes. No backend or CMS is configured.
 
 ## Before publishing
+
+After content and image changes, run these commands from the project root:
+
+```bash
+python3 scripts/build_pages.py
+python3 scripts/build_galleries.py
+```
+
+Configure static hosting to serve `public/` as its document root, or upload
+the contents of `public/` to the host's website root. Do not publish the repository
+root or add `/public/` to visitor URLs. The `src/`, `scripts/`, documentation,
+and development metadata are not required on the production host.
+
+For a production-like local check without the live catalog endpoint, run:
+
+```bash
+python3 -m http.server 8001 --bind 127.0.0.1 --directory public
+```
+
+Open `http://localhost:8001` on the host machine. Check navigation, images,
+program disclosures, gallery expansion, and the contact form's Gmail draft.
+Check the mobile menu at a narrow viewport. Stop this test server with Ctrl+C.
 
 The current implementation has separate static pages and a blog, but no news
 CMS or publishing dashboard. Blog copy is adapted from the existing academy

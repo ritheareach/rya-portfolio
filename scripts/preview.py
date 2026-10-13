@@ -26,7 +26,7 @@ class PreviewServer(ThreadingHTTPServer):
 
 
 if __name__ == "__main__":
-    handler = partial(PreviewHandler, directory=Path(__file__).parent)
+    handler = partial(PreviewHandler, directory=Path(__file__).resolve().parent.parent / "public")
     with PreviewServer(("127.0.0.1", 8000), handler) as server:
         print("Preview listening on http://127.0.0.1:8000", flush=True)
         server.serve_forever()

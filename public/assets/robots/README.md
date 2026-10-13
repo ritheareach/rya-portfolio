@@ -5,11 +5,19 @@ are unchanged. The website uses compressed WebP copies up to 1000px with lazy
 loading. Images are shown as references and design renders, not as claims of
 student authorship, available products or confirmed academy equipment.
 
-Existing images have descriptive alt text in `index.html`. New images use the
+Existing robot figures have descriptive alt text in `public/projects.html`,
+generated from `src/site-template.html`. Paths here refer to the repository
+root unless they are image links in the table, which are relative to this file.
+New images use the
 Subject column below, or a readable filename, until a description is provided.
 Numeric prefixes set a fixed, randomly assigned order. The first six eligible
 images are featured; the rest appear in the expandable gallery. Images used
 elsewhere and hero variants are excluded. Images are display-only, not clickable.
+
+Add optimized images to `public/assets/robots/`, update the table below, and
+run `python3 scripts/build_galleries.py` from the repository root before
+publishing. The preview server scans this folder on each catalog request;
+static hosting requires the rebuilt `public/assets/image-catalog.json`.
 
 | Website image                  | Original filename                                                   | Subject                            |
 | ------------------------------ | ------------------------------------------------------------------- | ---------------------------------- |

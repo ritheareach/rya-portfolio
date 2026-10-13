@@ -2,8 +2,10 @@
 from pathlib import Path
 import re
 
-ROOT = Path(__file__).parent
-source = (ROOT / "site-template.html").read_text()
+ROOT = Path(__file__).resolve().parent.parent
+PUBLIC = ROOT / "public"
+PUBLIC.mkdir(exist_ok=True)
+source = (ROOT / "src" / "site-template.html").read_text()
 header, rest = source.split('    <main id="main">', 1)
 body, footer = rest.split('    </main>', 1)
 sections = re.findall(r'<section\b.*?</section>', body, re.S)
@@ -25,7 +27,7 @@ def publish(name, title, content, active=None):
         document = document.replace(f'<a href="{active}.html">', f'<a href="{active}.html" aria-current="page">', 1)
         if active == "contact":
             document = document.replace('class="button button-small"', 'aria-current="page" class="button button-small"', 1)
-    (ROOT / f"{name}.html").write_text(document)
+    (PUBLIC / f"{name}.html").write_text(document)
 
 for name, (title, ids) in pages.items():
     content = ''.join(s for s in sections if any(f'id="{i}"' in s for i in ids))
@@ -33,7 +35,7 @@ for name, (title, ids) in pages.items():
     publish(name, title, intro + content, name)
 
 # Preserve old franchise bookmarks without maintaining a second enquiry page.
-(ROOT / "franchise.html").write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url=contact.html#franchise"><title>Franchise enquiries — RobotYOUNG Academy</title></head><body><a href="contact.html#franchise">Continue to contact &amp; franchise enquiries</a></body></html>')
+(PUBLIC / "franchise.html").write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url=contact.html#franchise"><title>Franchise enquiries — RobotYOUNG Academy</title></head><body><a href="contact.html#franchise">Continue to contact &amp; franchise enquiries</a></body></html>')
 
 stories = [
     ("beyond-the-classroom", "Academy highlight", "Learning doesn’t stop at the classroom door.", "050-IMG_20260718_094400.webp", "Students working on robots together in the classroom", "From hands-on projects to Cambodia Robotics Olympiad participation, our learners take their ideas into the wider robotics community.", [

@@ -5,7 +5,7 @@ import re
 from html.parser import HTMLParser
 from pathlib import Path
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).resolve().parent.parent / "public"
 EXTENSIONS = {".webp", ".jpg", ".jpeg", ".png", ".avif"}
 
 

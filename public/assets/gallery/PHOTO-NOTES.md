@@ -8,9 +8,17 @@ untouched in Downloads. Website copies are resized to a maximum dimension of
 and awards are not inferred.
 
 Each filename below links to its website copy. The alt text is also set on the
-corresponding image in `index.html`.
+corresponding existing gallery figure in `src/site-template.html`, which
+generates `public/gallery.html`. Paths here refer to the repository root;
+image links in the table are relative to this file.
 The original JPG copies retain their source filenames. Optimized WebP previews
 have randomly assigned numeric prefixes, which set the fixed gallery order.
+
+Add optimized display images to `public/assets/gallery/previews/` and update
+the descriptions below. Run `python3 scripts/build_galleries.py` from the
+repository root before publishing to refresh `public/assets/image-catalog.json`.
+The preview server scans the image folder on each catalog request; static
+hosting reads the generated catalog instead.
 
 | Photo                                                          | Alt text                                                                                        |
 | -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
