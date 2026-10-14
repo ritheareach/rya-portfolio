@@ -1,0 +1,53 @@
+{
+  "sourcePage": "https://www.facebook.com/robotyoung",
+  "retrievedOn": "2026-10-14",
+  "retrievalTimezone": "Asia/Phnom_Penh",
+  "status": "partial",
+  "method": "Public webpage extraction; authenticated OpenCLI browser connection unavailable.",
+  "limitations": [
+    "One post body was accessible. This is not a complete page history.",
+    "The public page displayed only a relative publication time. No exact publication date was inferred.",
+    "Photo page links were discovered but their content could not be fetched. No image files were downloaded.",
+    "The text below preserves the English passage from the bilingual post, not the complete Khmer passage.",
+    "Existing news.json content has not been replaced. This file is a review archive, not build-ready blog content."
+  ],
+  "pageDetails": {
+    "name": "RobotYOUNG Academy",
+    "category": "Education",
+    "mission": "Build Workforce 4.0",
+    "missionKhmer": "បេសកកម្ម: កសាងមូលធនមនុស្ស ៤.០",
+    "address": "RobotYOUNG Academy, Connexion Asia, Koh Pich City, Corner of Koh Pich Street, and Park Ave, Phnom Penh, Kingdom of Cambodia, Phnom Penh, Cambodia",
+    "phone": "+855 15 999 187",
+    "email": "robotyoungacademy@gmail.com"
+  },
+  "posts": [
+    {
+      "sourceUrl": "https://www.facebook.com/robotyoung/posts/pfbid057PJW8d45dW6ba6taSXqH6oZXCQiSR5CHB4VKW49jR2evjogvrD1ULAbBPENWuTul",
+      "author": "RobotYOUNG Academy",
+      "publishedDate": null,
+      "publicationLabelAsDisplayed": "15 hours ago",
+      "headlineAsDisplayed": "ESP32 Class – Turn Your Ideas into Smart Technology!",
+      "startDateAsStatedInPost": "2026-10-24",
+      "englishTextAsDisplayed": "EN: Do you want to build smart electronic devices, wireless robots, and IoT applications? Join RobotYOUNG Academy’s ESP32 Class, where hands-on learning helps you turn coding and electronics knowledge into real-world projects.\n\n🎯 What Will You Learn?\n\n🔹 ESP32 Architecture & Microcontroller Programming\n\n🔹 Coding with the Arduino IDE\n\n🔹 Wireless Communication using Wi-Fi, Bluetooth & ESP-NOW\n\n🔹 Building browser-controlled Web Servers\n\n🔹 Connecting to REST APIs & MQTT for IoT applications\n\n🔹 Developing Smart Devices, Wireless Robotics & IoT Systems\n\n🔹 Designing, building, testing, and presenting your own technology project\n\n📅 Class Enrollment/Start Date: 24 October 2026\n\n📍 Location: Connexion Building, Koh Pich Street, Phnom Penh, Cambodia\n\n📞 For More Information: +855 15 999 187\n\n🔥 Ready to take your coding and electronics skills to the next level? Enroll today and start building the future with ESP32!\n\n📩 Contact RobotYOUNG Academy today to learn more and secure your place!",
+      "photoPageUrls": [
+        "https://www.facebook.com/photo/?fbid=1118942077166527&set=a.195739952820082"
+      ],
+      "downloadedImages": [],
+      "reviewRequired": [
+        "Confirm the exact publication date before converting to the site's dated article format.",
+        "Obtain the original course image and confirm its suitability for website reuse.",
+        "Review enrollment availability before publishing time-sensitive course information."
+      ]
+    }
+  ],
+  "additionalPhotoPageUrlsUnverified": [
+    "https://www.facebook.com/photo/?fbid=1115101117550623",
+    "https://www.facebook.com/photo/?fbid=1115100874217314",
+    "https://www.facebook.com/photo/?fbid=1115100830883985",
+    "https://www.facebook.com/photo/?fbid=1115100804217321",
+    "https://www.facebook.com/photo/?fbid=1115100610884007",
+    "https://www.facebook.com/photo/?fbid=1115100380884030",
+    "https://www.facebook.com/photo/?fbid=1114913324236069",
+    "https://www.facebook.com/photo/?fbid=1114019270992141"
+  ]
+}

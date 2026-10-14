@@ -1339,20 +1339,52 @@ nav a[aria-current="page"]:not(.button) {
 .blog-card h2 { font-size: 30px; margin-bottom: 18px; }
 .blog-card h2 a:hover { color: var(--green); }
 .blog-card-copy { padding: 32px; }
+.blog-card h2 { line-height: 1.5; }
 .blog-card-copy .secondary-link { margin-top: 20px; }
 .blog-image { display: block; }
 .blog-image img { width: 100%; height: 280px; object-fit: cover; }
 .blog-featured { display: grid; grid-template-columns: 1.15fr 1fr; background: var(--mint); }
-.blog-featured .blog-image img { height: 100%; min-height: 380px; }
+.blog-featured .blog-image { position: relative; min-height: 380px; }
+.blog-featured .blog-image img { position: absolute; inset: 0; height: 100%; object-fit: contain; }
 .blog-featured .blog-card-copy { padding: 48px; align-self: center; }
 .blog-featured h2 { font-size: clamp(30px, 3vw, 42px); }
 .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 32px; }
-.post-heading { max-width: 850px; margin: 32px auto 40px; }
+.news-more { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); }
+.news-more-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.news-more-heading h2 { font-size: 30px; }
+.news-slider-controls:not([hidden]) { display: flex; gap: 12px; }
+.news-slider-controls button { min-width: 44px; min-height: 44px; justify-content: center; }
+.news-slider-controls button:disabled { opacity: 0.4; cursor: default; }
+.news-slider { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; }
+.news-slider .blog-card { flex: 0 0 min(340px, 90%); scroll-snap-align: start; }
+.news-slider .blog-image img { height: 220px; }
+.news-slider .blog-card-copy { padding: 24px; }
+.news-slider .blog-card h2 { font-size: 26px; }
+.blog-post { max-width: 850px; padding-block: 40px 64px; }
+.post-heading { margin: 24px 0 28px; }
+.post-heading h1 { font-size: clamp(36px, 4vw, 52px); line-height: 1.5; margin-block: 12px 16px; }
+.post-lede { max-width: 700px; line-height: 1.6; }
 .post-byline { font-size: 13px; margin-top: 24px; }
-.post-image { width: 100%; max-height: 600px; object-fit: cover; border-radius: 18px; }
-.post-body { max-width: 700px; margin: 48px auto; }
-.post-body h2 { font-size: 30px; margin-block: 40px 20px; }
-.post-body p { font-size: 18px; line-height: 1.8; }
+.post-heading .post-byline { margin-top: 16px; }
+.post-image { width: 100%; height: auto; border-radius: 18px; }
+.post-body { margin: 32px 0 48px; }
+.post-body h2 { font-size: 28px; margin-block: 32px 16px; }
+.post-body h2:first-child { margin-top: 0; }
+.post-body p { font-size: 18px; line-height: 1.8; overflow-wrap: anywhere; }
+.post-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
+.post-gallery figure { margin: 0; }
+.post-gallery figure:only-child { grid-column: 1 / -1; }
+.post-gallery img { width: 100%; height: auto; border-radius: 12px; }
+.post-gallery figcaption { margin-top: 12px; font-size: 14px; color: var(--muted); }
+.post-video { margin: 32px 0; }
+.post-video iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--line); border-radius: 12px; background: var(--mint); }
+.post-video-portrait { max-width: 400px; }
+.post-video-portrait iframe { aspect-ratio: 9 / 16; }
+.post-video-square iframe { aspect-ratio: 1; }
+.post-video video { display: block; width: 100%; height: auto; border-radius: 12px; }
+.post-video figcaption { margin-top: 12px; font-size: 14px; color: var(--muted); overflow-wrap: anywhere; }
+.post-video .secondary-link { margin-top: 12px; }
+.post-source { margin-top: 24px; font-size: 14px; }
 .post-body .button { margin-top: 32px; }
 .post-next { border-top: 1px solid var(--line); padding-top: 32px; }
 .post-next h2 { font-size: 28px; margin-bottom: 16px; }
@@ -1368,7 +1400,8 @@ nav a[aria-current="page"]:not(.button) {
   .blog-heading { margin-bottom: 28px; }
   .blog-heading > p:last-child, .post-lede { font-size: 17px; }
   .blog-featured, .blog-grid, .home-links { grid-template-columns: 1fr; }
-  .blog-featured .blog-image img { height: 240px; min-height: 0; }
+  .post-gallery { grid-template-columns: 1fr; }
+  .blog-featured .blog-image { height: 320px; min-height: 0; }
   .blog-card-copy, .blog-featured .blog-card-copy { padding: 24px; }
   .blog-card h2 { font-size: 28px; }
   .blog-image img { height: 240px; }

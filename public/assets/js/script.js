@@ -58,6 +58,29 @@ if (interest && sessionStorage.getItem("enquiry-interest")) {
 document.querySelectorAll("img").forEach((image) => {
   image.draggable = false;
 });
+const newsSlider = document.querySelector(".news-slider");
+if (newsSlider) {
+  const controls = document.querySelector(".news-slider-controls");
+  const [previous, next] = controls.querySelectorAll("button");
+  const updateSlider = () => {
+    const end = newsSlider.scrollWidth - newsSlider.clientWidth;
+    controls.hidden = end <= 1;
+    previous.disabled = newsSlider.scrollLeft <= 1;
+    next.disabled = newsSlider.scrollLeft >= end - 1;
+  };
+  const slide = (direction) => {
+    const step = newsSlider.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(newsSlider).gap);
+    newsSlider.scrollBy({
+      left: direction * step,
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+    });
+  };
+  previous.addEventListener("click", () => slide(-1));
+  next.addEventListener("click", () => slide(1));
+  newsSlider.addEventListener("scroll", updateSlider, { passive: true });
+  new ResizeObserver(updateSlider).observe(newsSlider);
+  updateSlider();
+}
 document.addEventListener("dragstart", (event) => {
   if (event.target.closest("img")) event.preventDefault();
 });

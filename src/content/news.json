@@ -1,39 +1,139 @@
 [
   {
-    "slug": "beyond-the-classroom",
-    "category": "Academy highlight",
-    "title": "Learning doesn’t stop at the classroom door.",
-    "image": "050-IMG_20260718_094400.webp",
-    "alt": "Students working on robots together in the classroom",
-    "summary": "From hands-on projects to Cambodia Robotics Olympiad participation, our learners take their ideas into the wider robotics community.",
+    "slug": "robot-dog",
+    "publishedDate": "2026-10-14",
+    "category": "STEM Robotics Engineering",
+    "title": "នៅពេលកូដ និងអេឡិចត្រូនិករួមគ្នា \"Robot Dog\" ក៏ចាប់ផ្តើមដើរ",
+    "summary": "សិស្សានុសិស្សរបស់យើងកំពុងសាងសង់ និងសាកល្បង Quadruped Robot (Robot Dog) ដោយផ្ទាល់។",
+    "author": "RobotYOUNG Academy",
+    "image": "facebook-robot-dog-01.webp",
+    "alt": "Students working at a laptop beside a yellow quadruped robot and electronic components",
+    "sourceUrl": "https://www.facebook.com/robotyoung/posts/pfbid033p2bRr4Ee86uxRmgbE7yJxNc2RoQxwNUZqS79piMs547XBNPXd3qBJ5ZgUjyaH1Xl",
+    "sourceNote": "Original Facebook text copied without rewriting. Facebook displays September 3 without a year; no original year is inferred. The website publication date, 2026-10-14, is distinct from the Facebook date. Photographs are from this post.",
     "sections": [
       {
-        "heading": "Ideas become something you can build",
-        "text": "Robotics brings science, technology, engineering and mathematics together. At RobotYOUNG Academy, learners explore these subjects through hands-on projects, turning ideas into builds they can test and improve."
-      },
-      {
-        "heading": "A wider community of makers",
-        "text": "Learning reaches beyond classroom activities through student projects and Cambodia Robotics Olympiad participation. Explore the academy’s project page for a closer look at what young makers are working on."
+        "heading": "",
+        "text": "🤖 នៅពេលកូដ និងអេឡិចត្រូនិករួមគ្នា \"Robot Dog\" ក៏ចាប់ផ្តើមដើរ - When coding meets engineering, a Robot Dog comes to life!\n\nនៅក្នុងថ្នាក់ STEM Robotics Engineering Program សិស្សានុសិស្សរបស់យើងកំពុងសាងសង់ និងសាកល្បង Quadruped Robot (Robot Dog) ដោយផ្ទាល់។ តាមរយៈការភ្ជាប់អេឡិចត្រូនិក ការគ្រប់គ្រង Servo Motors និងការសរសេរកូដ សិស្សបានអនុវត្តចំណេះដឹងទៅលើគម្រោងពិត និងរៀនដោះស្រាយបញ្ហាបច្ចេកទេសជាក្រុម។\n\nការរៀនបែប Hands-on Learning នេះជួយអភិវឌ្ឍជំនាញ Robotics, Coding, Problem-Solving និង Teamwork ដែលជាមូលដ្ឋានសម្រាប់វិស្វករ និងអ្នកបង្កើតបច្ចេកវិទ្យានាពេលអនាគត។\n\nEN: In our STEM Robotics Engineering Program, students are building and testing a Quadruped Robot (Robot Dog) through hands-on learning. By integrating electronics, servo motor control, and coding, they gain practical engineering experience while developing skills in robotics, problem-solving, and teamwork.\n\n#RobotYOUNGAcademy#STEMEducation#RoboticsEngineering#QuadrupedRobot#FutureEngineers#HandsOnLearning#CodingForKids",
+        "images": [
+          {"image": "facebook-robot-dog-02.webp", "alt": "Instructor helping students assemble a yellow quadruped robot"},
+          {"image": "facebook-robot-dog-03.webp", "alt": "Instructor and student working on a quadruped robot's electronics"},
+          {"image": "facebook-robot-dog-04.webp", "alt": "Students using a laptop beside a yellow quadruped robot"},
+          {"image": "facebook-robot-dog-05.webp", "alt": "Students and instructor working at a laptop and robotics project"}
+        ]
       }
     ],
-    "ctaTarget": "projects",
-    "ctaLabel": "Explore student projects"
+    "ctaTarget": "programs",
+    "ctaLabel": "Explore programs"
   },
   {
+    "slug": "smart-lock-system-presentation",
+    "publishedDate": "2026-10-14",
+    "category": "Student presentation · Video",
+    "title": "ការធ្វើបទបង្ហាញ៖ Smart Lock System",
+    "summary": "តើ Matrix Keypad និង Servo Motor អាចធ្វើការរួមគ្នា ដើម្បីបង្កើតប្រព័ន្ធសោឆ្លាតវៃ បានយ៉ាងដូចម្តេច?",
+    "author": "RobotYOUNG Academy",
+    "image": "facebook-smart-lock-system.webp",
+    "alt": "Student holding a smart lock model beside a display explaining Matrix Keypad wiring, captured from the academy Reel",
+    "sourceUrl": "https://www.facebook.com/reel/2308558599982398/",
+    "sourceNote": "From RobotYOUNG Academy’s Facebook Reel. Date shown is the website publication date.",
+    "sections": [
+      {
+        "heading": "ភាសាខ្មែរ៖",
+        "text": "🤖 ការធ្វើបទបង្ហាញ៖ Smart Lock System – តើ Matrix Keypad និង Servo Motor អាចធ្វើការរួមគ្នា ដើម្បីបង្កើតប្រព័ន្ធសោឆ្លាតវៃ បានយ៉ាងដូចម្តេច? – Smart Lock System — How can a Matrix Keypad and Servo Motor work together to create a smart locking system?"
+      },
+      {
+        "heading": "",
+        "text": "\nសិស្សបានធ្វើបទបង្ហាញអំពីគម្រោង Smart Lock System ដែលបញ្ចូលគ្នានូវ Matrix Keypad, Servo Motor, Electronics និង Programming ដើម្បីបង្កើតប្រព័ន្ធសោឆ្លាតវៃ។"
+      },
+      {
+        "heading": "",
+        "text": "\nបន្ថែមពីនេះសិស្សក៏បានបង្ហាញអំពីគោលការណ៍ដំណើរការរបស់ Matrix Keypad ដែលអនុញ្ញាតឱ្យអ្នកប្រើបញ្ចូលលេខកូដ (Password) តាមរយៈគ្រាប់ចុច។ ពួកគេក៏បានពន្យល់អំពីការតភ្ជាប់ជួរដេក និងជួរឈរ (Rows and Columns) របស់ Keypad និងរបៀប ដែលប្រព័ន្ធអាចអានការចុចគ្រាប់ចុចនីមួយៗ ដើម្បីទទួលបានទិន្នន័យបញ្ចូល។"
+      },
+      {
+        "heading": "",
+        "text": "\nបន្ថែមពីនេះសិស្សក៏បានបង្ហាញអំពីគោលការណ៍ដំណើរការរបស់ Matrix Keypad ដែលអនុញ្ញាតឱ្យអ្នកប្រើបញ្ចូលលេខកូដ (Password) តាមរយៈគ្រាប់ចុច។ ពួកគេក៏បានពន្យល់អំពីការតភ្ជាប់ជួរដេក និងជួរឈរ (Rows and Columns) របស់ Keypad និងរបៀប ដែលប្រព័ន្ធអាចអានការចុចគ្រាប់ចុចនីមួយៗ ដើម្បីទទួលបានទិន្នន័យបញ្ចូល។"
+      },
+      {
+        "heading": "",
+        "text": "\nជាចុងក្រោយរៀបរាប់អំពី Servo Motor ដែលជាម៉ូទ័រអាចគ្រប់គ្រងមុំបង្វិល បានយ៉ាងជាក់លាក់។ តាមរយៈការតភ្ជាប់សៀគ្វី (Wiring) និងការសរសេរកម្មវិធី (Coding) Servo Motor អាចបង្វិល ដើម្បីធ្វើសកម្មភាពចាក់សោ និងដោះសោតាមលក្ខខណ្ឌ ដែលបានកំណត់ក្នុងកម្មវិធី។"
+      },
+      {
+        "heading": "\n\nEnglish:",
+        "text": "\nProject Presentation — Smart Lock System: How can a Matrix Keypad and Servo Motor work together to create a smart locking system?"
+      },
+      {
+        "heading": "",
+        "text": "\nAs part of the Robotics Engineering course, students presented their Smart Lock System project, integrating a Matrix Keypad, Servo Motor, electronics, and programming to build a smart locking mechanism. They explained the key components, including the Arduino main board, matrix keypad, servo motor, and power supply, highlighting the role of each component in the system."
+      },
+      {
+        "heading": "",
+        "text": "\nThe students demonstrated how the Matrix Keypad allows users to enter a password using its buttons. They also explained the keypad's row-and-column wiring configuration and how the system reads individual key presses as input data."
+      },
+      {
+        "heading": "",
+        "text": "\nIn addition, the students introduced the Servo Motor, which provides precise control over rotational position. Through circuit wiring and coding, the servo motor can rotate to perform locking and unlocking actions according to the programmed conditions."
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.facebook.com/reel/2308558599982398/",
+        "embedUrl": "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2308558599982398%2F&show_text=false&width=267&t=0",
+        "title": "ការធ្វើបទបង្ហាញ៖ Smart Lock System",
+        "ratio": "portrait"
+      }
+    ],
+    "ctaTarget": "programs",
+    "ctaLabel": "Explore programs"
+  },
+  {
+    "slug": "stem-robotics-engineering",
+    "publishedDate": "2026-10-14",
+    "category": "STEM Robotics Engineering",
+    "title": "ជំនាញបច្ចេកវិទ្យាពិត មិនមែនកើតឡើងត្រឹមទ្រឹស្តី ក្នុងសៀវភៅទេ គឺផ្ដើមពីការរចនា ទៅដល់ការអនុវត្តជាក់ស្តែង",
+    "summary": "គឺផ្ដើមពីការរចនា ទៅដល់ការអនុវត្តជាក់ស្តែង",
+    "author": "RobotYOUNG Academy",
+    "image": "facebook-stem-robotics-engineering-01.webp",
+    "alt": "Students assembling electronics together at a classroom table with a laptop",
+    "sourceUrl": "https://www.facebook.com/robotyoung/posts/pfbid02ouWdR9LcdeVihraB9YQKSUMuktwyNK8tXJ1tsQSaAdWwKZ8LnqJuF8mnpmgmskZgl",
+    "sourceNote": "Original Facebook text copied without rewriting. Facebook displays October 4 at 11:59 AM without a year; no original year is inferred. The website publication date, 2026-10-14, is distinct from the Facebook date. Photographs are from this post.",
+    "sections": [
+      {
+        "heading": "",
+        "text": "🤖 ជំនាញបច្ចេកវិទ្យាពិត មិនមែនកើតឡើងត្រឹមទ្រឹស្តី ក្នុងសៀវភៅទេ គឺផ្ដើមពីការរចនា ទៅដល់ការអនុវត្តជាក់ស្តែង - Real tech skills don't come from textbooks alone, they start from design to real-world application! 🚀\n\nនៅក្នុងថ្នាក់ STEM Robotics Engineering Program សិស្សានុសិស្សរបស់យើងបានសាងសង់ និងសាកល្បងជាមួយរ៉ូបូតដោយផ្ទាល់ដៃ រួមបញ្ចូលគ្នានូវបច្ចេកវិទ្យា អេឡិចត្រូនិក ការគ្រប់គ្រងម៉ូទ័រ និងការសរសេរកូដ។ តាមរយៈ Hands-on Learning សិស្សបានរៀនដោះស្រាយបញ្ហា កែតម្រូវកូដ និងសៀគ្វី នៅពេលដែលរ៉ូបូតមិនទាន់ដំណើរការតាមការរំពឹងទុក ដែលនេះជាបេះដូងនៃ Engineering Mindset។\n\nការរៀនបែបនេះមិនត្រឹមតែផ្តល់ចំណេះដឹងផ្នែក Robotics & Coding ប៉ុណ្ណោះទេ ប៉ុន្តែថែមទាំងអភិវឌ្ឍជំនាញ Critical Thinking និង Problem-Solving សម្រាប់ការបង្កើតថ្មីនាពេលអនាគត។\n\nEN: In our STEM Robotics Engineering Program, students build and test Robotic Cars hands-on, integrating technology, electronics, motor control, and coding. Through experiential learning, they troubleshoot, debug, and test systems when things don't go as planned, cultivating a true Engineering Mindset. This approach not only builds technical skills in robotics and coding, but also develops critical thinking, problem-solving, and creativity for future innovators.\n\n#STEM#STEMEducation#STEMRobotics#Robotics#RoboticsEngineering#RoboticsEducation#Coding#Programming#Engineering#EngineeringMindset#HandsOnLearning#ExperientialLearning",
+        "images": [
+          {"image": "facebook-stem-robotics-engineering-02.webp", "alt": "Student working at a laptop on a classroom table"},
+          {"image": "facebook-stem-robotics-engineering-03.webp", "alt": "Student using a laptop and mouse in the classroom"},
+          {"image": "facebook-stem-robotics-engineering-04.webp", "alt": "Student in a red shirt working at a laptop beside electronics"},
+          {"image": "facebook-stem-robotics-engineering-05.webp", "alt": "Students assembling electronics together at a classroom table"}
+        ]
+      }
+    ],
+    "ctaTarget": "programs",
+    "ctaLabel": "Explore programs"
+  },
+  
+  {
     "slug": "next-learning-adventure",
+    "publishedDate": "2026-10-14",
+    "author": "RobotYOUNG Academy",
     "category": "Courses & camps",
     "title": "Plan their next learning adventure.",
     "image": "033-IMG_5959.webp",
     "alt": "A learner programming beside wheeled robots",
+    "images": [],
     "summary": "A starting point for curious minds: discover programs, ask questions and find a learning path that fits your child.",
     "sections": [
       {
         "heading": "Start with their curiosity",
-        "text": "The academy offers learning opportunities in robotics, coding, AI and IoT, drones and more. Browse the program summaries and learning path to see where your child’s interests could lead."
+        "text": "The academy offers learning opportunities in robotics, coding, AI and IoT, drones and more. Browse the program summaries and learning path to see where your child’s interests could lead.",
+        "images": [
+          {"image": "016-classroom-coding.webp", "alt": "Learners working together on laptop programming activities in the classroom", "caption": "A place to explore coding together."}
+        ]
       },
       {
         "heading": "Talk to us about availability",
-        "text": "Ask the academy about current class openings and the next Summer Camp. Dates and availability are confirmed directly by the academy, so get in touch before making your plans."
+        "text": "Ask the academy about current class openings and the next Summer Camp. Dates and availability are confirmed directly by the academy, so get in touch before making your plans.",
+        "images": []
       }
     ],
     "ctaTarget": "programs",
@@ -41,22 +141,385 @@
   },
   {
     "slug": "stay-curious",
+    "publishedDate": "2026-10-14",
+    "author": "RobotYOUNG Academy",
     "category": "Community",
     "title": "Stay curious. Stay connected.",
     "image": "045-IMG_8719.webp",
     "alt": "An exhibitor sharing robot models with visitors",
+    "images": [
+      {"image": "003-IMG_5513.webp", "alt": "A group gathering around a small device during a workshop demonstration", "caption": "Sharing a demonstration and discovering something new."}
+    ],
     "summary": "Workshops, STEM activities and the robotics community: there is always another question worth exploring.",
     "sections": [
       {
         "heading": "Make room for discovery",
-        "text": "Building, experimenting and sharing ideas are part of the academy’s hands-on approach. Workshops and STEM activities offer opportunities to connect those interests with other curious learners."
+        "text": "Building, experimenting and sharing ideas are part of the academy’s hands-on approach. Workshops and STEM activities offer opportunities to connect those interests with other curious learners.",
+        "images": []
       },
       {
         "heading": "Keep in touch with the academy",
-        "text": "Contact RobotYOUNG Academy for workshop announcements, STEM activities and competition updates. The team can confirm what is coming up and help you find a suitable opportunity."
+        "text": "Contact RobotYOUNG Academy for workshop announcements, STEM activities and competition updates. The team can confirm what is coming up and help you find a suitable opportunity.",
+        "images": []
       }
     ],
     "ctaTarget": "contact",
     "ctaLabel": "Ask about upcoming activities"
+  },
+  {
+    "slug": "first-lines-of-code",
+    "publishedDate": "2026-10-14",
+    "author": "RobotYOUNG Academy",
+    "category": "Coding & discovery",
+    "title": "Big ideas start with small steps in code.",
+    "image": "020-PXL_20260705_082854659.webp",
+    "alt": "A student studying a block-based programming workspace on a laptop",
+    "images": [],
+    "summary": "A sequence, a repeat and a question: discover how simple programming ideas help young learners turn curiosity into action.",
+    "sections": [
+      {
+        "heading": "Give an idea a clear sequence",
+        "text": "Coding starts with thinking about what should happen, and in what order. A learner might break a movement or a simple animation into smaller instructions. Block-based programming makes those instructions visible, creating a useful starting point for exploring sequences, loops and decisions.",
+        "images": [
+          {"image": "016-classroom-coding.webp", "alt": "Learners working together on laptop programming activities in the classroom", "caption": "Exploring programming together."},
+          {"image": "013-IMG_7840.webp", "alt": "A student seated at a classroom table with two open laptops"}
+        ]
+      },
+      {
+        "heading": "Predict, run and notice",
+        "text": "Before running a program, ask what you expect it to do. Then compare that prediction with the result. If something behaves differently, change one instruction and try again. This habit turns an unexpected result into a question to investigate rather than a reason to stop.",
+        "images": []
+      },
+      {
+        "heading": "Find a place to begin",
+        "text": "RobotYOUNG Academy’s program summaries introduce coding alongside robotics and other technology subjects. Explore the learning paths, then ask the team which starting point suits your child’s interests and experience.",
+        "images": []
+      }
+    ],
+    "ctaTarget": "programs",
+    "ctaLabel": "Explore coding and robotics"
+  },
+  {
+    "slug": "robotics-certificates",
+    "publishedDate": "2026-10-14",
+    "category": "Robotics Engineering",
+    "title": "អបអរសាទរចំពោះសិស្សានុសិស្ស RobotYOUNG Academy",
+    "summary": "ការគិតវិភាគ និងការដោះស្រាយបញ្ហាជាក់ស្តែង",
+    "author": "RobotYOUNG Academy",
+    "image": "facebook-robotics-certificates-01.webp",
+    "alt": "Student and instructor holding a robotics course certificate in the classroom",
+    "sourceUrl": "https://www.facebook.com/robotyoung/posts/pfbid02xTKqMFqRRra2Km92qAHWPUSyNjEjZcuEqVhcVAZEhfwQzTaCtBjXnpXwyGX2X4m9l",
+    "sourceNote": "Original Facebook text copied without rewriting. Facebook displays September 23 at 11:59 AM without a year; no original year is inferred. The website publication date, 2026-10-14, is distinct from the Facebook date. Photographs are from this post.",
+    "sections": [
+      {
+        "heading": "",
+        "text": "🤖 អបអរសាទរចំពោះសិស្សានុសិស្ស RobotYOUNG Academy - Congratulations to Our Students!\n\nបន្ទាប់ពីការខិតខំប្រឹងប្រែងសិក្សា និងអនុវត្តជាក់ស្តែងយ៉ាងតឹងរ៉ឹង សិស្សានុសិស្សរបស់យើងបានបញ្ចប់មួយកម្រិតសិក្សាបន្ថែមទៀត (Robotics Engineering Program) ជាមួយនឹងលទ្ធផលគួរជាទីមោទន និងវិញ្ញាបនបត្របញ្ជាក់ការសិក្សាដោយជោគជ័យ! តាមរយៈកម្មវិធីសិក្សា Robotics និង STEAM ពួកគេមិនត្រឹមតែទទួលបានចំណេះដឹងផ្នែកទ្រឹស្តីនោះទេ ប៉ុន្តែថែមទាំងបានអភិវឌ្ឍជំនាញសំខាន់ៗសម្រាប់អនាគតដូចជា៖\n\n✅ ការសរសេរកូដ និងអេឡិចត្រូនិច (Coding & Electronics)\n\n✅ ការរចនា និងផ្គុំរ៉ូបូត (Robot Building & System Design)\n\n✅ ការគិតវិភាគ និងការដោះស្រាយបញ្ហាជាក់ស្តែង \n\nEN: After dedicated hands-on learning, our students successfully completed their Robotics Engineering level and earned their well-deserved certificates! Through Robotics and STEAM, they have powerfully developed essential future-ready skills, including programming, circuit design, critical thinking, and real-world problem-solving.\n\n#STEAM#Robotics#FutureSkills#RobotYOUNGAcademy",
+        "images": [
+          {"image": "facebook-robotics-certificates-02.webp", "alt": "Student and instructor holding a robotics course certificate"},
+          {"image": "facebook-robotics-certificates-03.webp", "alt": "Student and instructor holding a robotics course certificate"},
+          {"image": "facebook-robotics-certificates-04.webp", "alt": "Student and instructor holding a robotics course certificate"},
+          {"image": "facebook-robotics-certificates-05.webp", "alt": "Student and instructor holding a robotics course certificate"}
+        ]
+      }
+    ],
+    "ctaTarget": "programs",
+    "ctaLabel": "Explore programs"
+  },
+  {
+    "slug": "drone-fpv-graduation",
+    "publishedDate": "2026-10-14",
+    "category": "FPV Drone",
+    "title": "អបអរសាទរចំពោះការបញ្ចប់ថ្នាក់ Drone FPV Course",
+    "summary": "កម្មវិធីនេះត្រូវបានរចនាឡើងដើម្បីភ្ជាប់ចន្លោះរវាងទ្រឹស្តី និងការអនុវត្តជាក់ស្តែង",
+    "author": "RobotYOUNG Academy",
+    "image": "facebook-drone-fpv-graduation-01.webp",
+    "alt": "Drone course graduates and instructors posing outside RobotYOUNG Academy",
+    "sourceUrl": "https://www.facebook.com/robotyoung/posts/pfbid0yiH8Xru31Wrqdi5pr5xf4RtGXa3jCiQa5M1bPGAWnyG8mwzk324AwWtvsa6BAf1tl",
+    "sourceNote": "Original Facebook text copied without rewriting. Facebook displays September 18 at 3:39 PM without a year; no original year is inferred. The website publication date, 2026-10-14, is distinct from the Facebook date. Photographs are from this post. This is an archived announcement; confirm current enrollment, schedules, and availability with the academy.",
+    "sections": [
+      {
+        "heading": "",
+        "text": "🚀 អបអរសាទរចំពោះការបញ្ចប់ថ្នាក់ Drone FPV Course \n\n🎓 Congratulations to the amazing students for successfully completing the Drone FPV Course!\n\nកម្មវិធីនេះត្រូវបានរចនាឡើងដើម្បីភ្ជាប់ចន្លោះរវាងទ្រឹស្តី និងការអនុវត្តជាក់ស្តែង ទាក់ទងនឹងការហោះហើរ យល់ដឹងអំពីមុខងារ ការផ្គុំដំឡើង និងបញ្ជាដូចជា៖\n\n🚀ការសង់ផ្គុំតម្លើង (Assembly)៖ សិស្សបានទទួលបទពិសោធន៍ផ្ទាល់ដៃក្នុងការផ្គុំគ្រឿងបន្លាស់ ការផ្សារសៀគ្វី និងការយល់ដឹងពីអេឡិចត្រូនិកដែលធ្វើឲ្យការហោះអាចទៅរួច។\n\n🚀ការហោះហើរនិម្មិត (Simulation)៖ មុនពេលប្រថុយនឹងឧបករណ៍ពិត សិស្សបានហ្វឹកហាត់ជាច្រើនម៉ោងលើ Simulator ដើម្បីបង្កើតការចងចាំ និងរៀនពីរូបវិទ្យានៃការហោះក្នុងបរិស្ថានសុវត្ថិភាព។\n\n🚀ការហោះហើរពិត (Real Flight)៖ ចំណុចសំខាន់នៃវគ្គសិក្សាគឺការហ្វឹកហាត់ជាក់ស្តែងនៅទីលាន។ ការរៀនដោះស្រាយអថេរក្នុងពិភពពិតដូចជា ខ្យល់ ការរំខានសញ្ញា និងការយល់ដឹងពីជម្រៅ គឺជាជំនាញដែលអាចរៀនបានតែនៅលើអាកាស។\n\nThis program was designed to bridge the gap between theory and reality, and the results have been outstanding. We focused on a comprehensive curriculum that covered three critical pillars of drone operation\n\n✅ Assembly: Students got hands-on experience assembling components, soldering, and understanding the electronics that make flight possible.\n\n✅ Simulator: Before risking hardware, students logged hours on simulators to build muscle memory and learn the physics of flight in a safe environment.\n\n✅ Real Flight: The practical field training. Learning to handle real-world variables like wind, signal interference, and depth perception.\n\n📢 NEXT COURSE COMING SOON!\n\nDon't miss your chance to join the squad.\n\n#RobotYOUNGAcademy#AIFARMROBOTOCS\n\n#FPVDrone#DroneCourse#STEMEducation#FuturePilots#DroneLife#FPVFreestyle#LearnToFly",
+        "images": [
+          {"image": "facebook-drone-fpv-graduation-02.webp", "alt": "Drone course graduates and instructors posing outside RobotYOUNG Academy"},
+          {"image": "facebook-drone-fpv-graduation-03.webp", "alt": "Drone course graduates holding certificates with instructors indoors"},
+          {"image": "facebook-drone-fpv-graduation-04.webp", "alt": "Instructor and graduate holding a drone course certificate"},
+          {"image": "facebook-drone-fpv-graduation-05.webp", "alt": "Instructor and graduate holding a drone course certificate"}
+        ]
+      }
+    ],
+    "ctaTarget": "contact",
+    "ctaLabel": "Contact the academy"
+  },
+  {
+    "slug": "fpv-drone-course",
+    "publishedDate": "2026-10-14",
+    "category": "FPV Drone",
+    "title": "កូនអ្នកចូលចិត្តដ្រូន និងចង់ដឹងថា “តើ FPV Drone ហោះ និងបញ្ជាបានយ៉ាងដូចម្តេច?”",
+    "summary": "ដល់ពេលឱ្យការចង់ដឹងរបស់ពួកគេ ក្លាយជាជំនាញពិតប្រាកដហើយ!",
+    "image": "facebook-fpv-drone-course.webp",
+    "alt": "RobotYOUNG Academy FPV Drone course poster",
+    "sourceUrl": "https://www.facebook.com/photo/?fbid=1105902325137169&set=a.195739952820082",
+    "sourceNote": "Original saved Facebook text, copied without rewriting. The date above is the website publication date, not the unrecoverable Facebook date. This is an archived announcement; confirm current schedules and availability with the academy.",
+    "sections": [
+      {
+        "heading": "",
+        "text": "🚁\nកូនអ្នកចូលចិត្តដ្រូន និងចង់ដឹងថា “តើ FPV Drone ហោះ និងបញ្ជាបានយ៉ាងដូចម្តេច?” ដល់ពេលឱ្យការចង់ដឹងរបស់ពួកគេ ក្លាយជាជំនាញពិតប្រាកដហើយ! - New Technology Classes Are Now Open – Enroll Today! Turn curiosity into real-world skills with RobotYOUNG Academy’s FPV Drone Course!\n\nRobotYOUNG Academy បើកទទួលសិស្សថ្មីសម្រាប់វគ្គ FPV Drone ដែលផ្តោតលើ Hands-on Learning, Flight Skills & Drone Engineering។ សិស្សនឹងបានរៀនតាមរយៈការអនុវត្តជាក់ស្តែង ចាប់ពីការយល់ដឹងអំពីមូលដ្ឋានដ្រូន រហូតដល់ការដំឡើង កំណត់រចនាសម្ព័ន្ធ សាកល្បង និងបញ្ជា FPV Drone។\n🎯\nអ្វីដែលសិស្សនឹងទទួលបាន?\n🔹\nមូលដ្ឋានគ្រឹះនៃ Drone Fundamentals\n🔹\nការអភិវឌ្ឍ Flight Skills\n🔹\nចំណេះដឹង និងជំនាញ Drone Electronics\n🔹\nការអភិវឌ្ឍ Programming & Control Skills\n🔹\nការដោះស្រាយបញ្ហា និង Troubleshooting Skills\n🔹\nបទពិសោធន៍ Hands-on Engineering Experience\n📅\nកាលវិភាគសិក្សាចាប់ពីថ្ងៃច័ន្ទ ដល់ថ្ងៃសុក្រ ជាមួយជម្រើសម៉ោងសិក្សាផ្សេងៗ ដើម្បីឆ្លើយតបទៅនឹងតម្រូវការ របស់សិស្សានុសិស្ស។\n\nEN: RobotYOUNG Academy is now welcoming new students to join our FPV Drone Course, designed around Hands-on Learning, Flight Skills, and Drone Engineering.\n\nWhether your child is a beginner or interested in developing their drone and engineering skills, this course provides an exciting opportunity to explore FPV drone technology through practical projects and real-world applications.\n🎯\nWhat Will Students Learn? With guidance from our technical instructors and experienced engineers, students will develop practical knowledge and skills through hands-on learning, including:\n🔹\nDrone Fundamentals\n🔹\nFlight Skills Development\n🔹\nDrone Electronics\n🔹\nProgramming & Control Skills\n🔹\nProblem-Solving & Troubleshooting\n🔹\nHands-on Engineering Experience\n📅\nClass Schedule: Monday – Friday\n⏰\nMultiple time options are available to fit students’ schedules.\n📢\nENROLL NOW, LIMITED SEATS AVAILABLE!\n\n#RobotYOUNGAcademy #FPVDrone #DroneTechnology #DroneEngineering #STEMEducation #DroneTraining #HandsOnLearning #FutureSkills #Engineering #RoboticsCambodia"
+      }
+    ],
+    "ctaTarget": "contact",
+    "ctaLabel": "Contact the academy"
+  },
+  {
+    "slug": "beyond-the-classroom",
+    "publishedDate": "2026-10-14",
+    "author": "RobotYOUNG Academy",
+    "category": "Academy highlight",
+    "title": "Learning doesn’t stop at the classroom door.",
+    "image": "050-IMG_20260718_094400.webp",
+    "alt": "Students working on robots together in the classroom",
+    "images": [],
+    "summary": "From hands-on projects to Cambodia Robotics Olympiad participation, our learners take their ideas into the wider robotics community.",
+    "sections": [
+      {
+        "heading": "Ideas become something you can build",
+        "text": "Robotics brings science, technology, engineering and mathematics together. At RobotYOUNG Academy, learners explore these subjects through hands-on projects, turning ideas into builds they can test and improve.",
+        "images": [
+          {"image": "030-IMG_0898.webp", "alt": "Two students assembling electronics at a table with tools and a laptop", "caption": "Building with electronics and tools."},
+          {"image": "008-DJI_20260802155401_0046_D.webp", "alt": "An instructor guiding learners assembling electronics on blue work mats", "caption": "Practical guidance while building."}
+        ]
+      },
+      {
+        "heading": "A wider community of makers",
+        "text": "Learning reaches beyond classroom activities through student projects and Cambodia Robotics Olympiad participation. Explore the academy’s project page for a closer look at what young makers are working on.",
+        "images": []
+      }
+    ],
+    "ctaTarget": "projects",
+    "ctaLabel": "Explore student projects"
+  },
+  {
+    "slug": "build-test-improve",
+    "publishedDate": "2026-10-14",
+    "author": "RobotYOUNG Academy",
+    "category": "Hands-on robotics",
+    "title": "Build. Test. Learn. Try again.",
+    "image": "004-IMG_20260719_112234.webp",
+    "alt": "A student wearing glasses connecting wires on a green robot with yellow wheels",
+    "images": [],
+    "summary": "A robot’s first attempt is only the beginning. Small tests help makers understand what works and what to improve next.",
+    "sections": [
+      {
+        "heading": "Start with one clear goal",
+        "text": "A robotics project becomes easier to explore when its goal is specific. Can the robot move forward, stop where intended or respond to an input? Choosing one behavior gives a learner something concrete to build toward and a clear result to observe.",
+        "images": []
+      },
+      {
+        "heading": "Change one thing at a time",
+        "text": "When a build does not behave as expected, several explanations may be possible: its assembly, connections or instructions. With guidance, learners can check one part at a time and repeat the same test. Changing only one thing makes it easier to see which adjustment helped.",
+        "images": [
+          {"image": "011-model-city-robot.webp", "alt": "Students testing a small robot on cardboard roads beside wired electronics and model buildings", "caption": "Testing a robot in a model environment."}
+        ]
+      },
+      {
+        "heading": "Keep the learning, not just the finished build",
+        "text": "A short note or sketch can capture what was tried, what happened and what to try next. The finished robot matters, but so does the process of asking questions and improving an idea. Visit the academy’s project page to explore the hands-on side of robotics learning.",
+        "images": []
+      }
+    ],
+    "ctaTarget": "projects",
+    "ctaLabel": "Explore hands-on projects"
+  },
+  {
+    "slug": "better-ideas-together",
+    "publishedDate": "2026-10-14",
+    "author": "RobotYOUNG Academy",
+    "category": "Learning together",
+    "title": "Better ideas grow together.",
+    "image": "019-IMG_5653.webp",
+    "alt": "Two learners reviewing printed instructions together at a laptop",
+    "images": [],
+    "summary": "Sharing a plan, listening to another idea and explaining a result are part of the learning—not just the work around it.",
+    "sections": [
+      {
+        "heading": "Make space for another perspective",
+        "text": "Working together gives learners a chance to compare different ways of solving the same problem. One person might notice a detail in the instructions while another suggests a new approach. Taking time to listen can help a team see possibilities that one maker might miss.",
+        "images": [
+          {
+            "image": "002-IMG_6621.webp",
+            "alt": "Two students working at a laptop beside wheeled robots and electronics",
+            "caption": "Sharing a workspace and exploring robotics together."
+          }
+        ]
+      },
+      {
+        "heading": "Share the tools and the thinking",
+        "text": "A collaborative activity can include planning, assembling, programming and checking results. Taking turns gives each learner a chance to contribute beyond a single task. Explaining a choice to a teammate also helps make the reasoning behind it clearer.",
+        "images": [
+          {
+            "image": "030-IMG_0898.webp",
+            "alt": "Two students assembling electronics at a table with tools and a laptop",
+            "caption": "Hands-on teamwork with electronics and tools."
+          }
+        ]
+      },
+      {
+        "heading": "Celebrate a useful question",
+        "text": "What did we expect? What did we notice? What should we try next? These questions keep a shared project moving without requiring every answer straight away. Browse life at the academy for a glimpse of learners building, exploring and working alongside one another.",
+        "images": []
+      }
+    ],
+    "ctaTarget": "gallery",
+    "ctaLabel": "See life at the academy"
+  },
+  {
+    "slug": "small-circuits-big-questions",
+    "publishedDate": "2026-10-14",
+    "author": "RobotYOUNG Academy",
+    "category": "Electronics",
+    "title": "Small circuits. Big questions.",
+    "image": "047-IMG_0903.webp",
+    "alt": "A learner working on a circuit board on a blue electronics mat beside a laptop",
+    "images": [],
+    "summary": "Explore how connections, components and careful observation help learners make sense of electronics.",
+    "sections": [
+      {
+        "heading": "Follow the connections",
+        "text": "An electronics project is a chance to ask how individual parts work together. With guidance, learners can compare a diagram with a physical build, identify connections and describe the role of each component. Understanding the arrangement matters more than simply copying it.",
+        "images": [{"image": "041-IMG_9792.webp", "alt": "An adult guiding a student working on a small circuit board at a table", "caption": "Looking closely at a circuit with guidance."}]
+      },
+      {
+        "heading": "Observe before changing",
+        "text": "Before adjusting a build, pause to describe what happened and what was expected. A clear question gives the next check a purpose. Always follow the instructor’s guidance for powering, connecting and handling electronics.",
+        "images": []
+      }
+    ],
+    "ctaTarget": "programs",
+    "ctaLabel": "Explore technology programs"
+  },
+  {
+    "slug": "explain-your-build",
+    "publishedDate": "2026-10-14",
+    "author": "RobotYOUNG Academy",
+    "category": "Maker skills",
+    "title": "Every build has a story to share.",
+    "image": "042-IMG_1725.webp",
+    "alt": "Two students presenting with a laptop and microphone beside a projected programming screen",
+    "images": [],
+    "summary": "Explaining a project helps a young maker connect the idea, the process and the result—not just show the finished robot.",
+    "sections": [
+      {
+        "heading": "Start with the problem",
+        "text": "A useful project explanation begins with what the maker wanted to achieve. Describe the goal in everyday words, then show how the build responds to it. A sketch or demonstration can make a technical idea easier for someone else to follow.",
+        "images": []
+      },
+      {
+        "heading": "Share what changed",
+        "text": "The first idea and the finished project may look different. Explaining a test, an unexpected result and the adjustment that followed makes that learning visible. Leave room for questions: another person may notice a possibility worth exploring next.",
+        "images": []
+      }
+    ],
+    "ctaTarget": "projects",
+    "ctaLabel": "Discover student projects"
+  },
+  {
+    "slug": "model-city-ideas",
+    "publishedDate": "2026-10-14",
+    "author": "RobotYOUNG Academy",
+    "category": "Project ideas",
+    "title": "A small model opens up big ideas.",
+    "image": "056-project-demonstration.webp",
+    "alt": "Students and an instructor demonstrating a cardboard model city with robots and electronics",
+    "images": [],
+    "summary": "A model road, a moving robot and a practical question can bring several STEM ideas into one hands-on project.",
+    "sections": [
+      {
+        "heading": "Make an idea visible",
+        "text": "A model gives a team a shared place to explore an idea. Cardboard roads and buildings can help learners describe routes, movement and the space a robot needs. The model does not have to be elaborate to make a question concrete.",
+        "images": [{"image": "011-model-city-robot.webp", "alt": "Students testing a small robot on cardboard roads beside wired electronics and model buildings", "caption": "Trying an idea in a model environment."}]
+      },
+      {
+        "heading": "Test one part of the journey",
+        "text": "Choose a short route or a single behavior before trying a complete system. Observe the result, compare it with the plan and discuss the next adjustment. Small tests make it easier to understand how design and programming work together.",
+        "images": []
+      }
+    ],
+    "ctaTarget": "projects",
+    "ctaLabel": "Explore more builds"
+  },
+  {
+    "slug": "learning-to-debug",
+    "publishedDate": "2026-10-14",
+    "author": "RobotYOUNG Academy",
+    "category": "Coding habits",
+    "title": "An unexpected result is a starting point.",
+    "image": "053-IMG_5976.webp",
+    "alt": "A student typing code on a laptop beside a wheeled robot and white enclosure",
+    "images": [],
+    "summary": "Debugging begins with noticing a difference, asking a clear question and trying a focused change.",
+    "sections": [
+      {
+        "heading": "Describe what happened",
+        "text": "When a program does something unexpected, describe the behavior before making changes. What instruction was running? What should have happened instead? A specific description helps narrow the search and makes it easier to ask someone else for help.",
+        "images": []
+      },
+      {
+        "heading": "Keep the comparison fair",
+        "text": "Try one change and repeat the same scenario. If several instructions change at once, it becomes harder to know which one affected the result. Keep a short note of each attempt so useful discoveries are not lost between tests.",
+        "images": []
+      }
+    ],
+    "ctaTarget": "programs",
+    "ctaLabel": "Find a coding starting point"
+  },
+  {
+    "slug": "questions-for-young-makers",
+    "publishedDate": "2026-10-14",
+    "author": "RobotYOUNG Academy",
+    "category": "For families",
+    "title": "Ask about the journey, not just the answer.",
+    "image": "006-IMG_20260627_111110.webp",
+    "alt": "Children gathered around a small green object during a group activity",
+    "images": [],
+    "summary": "Simple questions can help a child explain what they noticed, what they tried and what they want to explore next.",
+    "sections": [
+      {
+        "heading": "Invite an explanation",
+        "text": "Instead of asking only whether a project worked, ask what the child was trying to make happen. What part was interesting? What surprised them? Giving them time to explain can reveal the thinking behind a build, even when it is still unfinished.",
+        "images": []
+      },
+      {
+        "heading": "Let the next question stay open",
+        "text": "You do not need to supply every technical answer to support curiosity. Ask what they might try next and how they could compare the results. For guidance on suitable learning opportunities, talk with the academy about your child’s interests and experience.",
+        "images": []
+      }
+    ],
+    "ctaTarget": "contact",
+    "ctaLabel": "Talk with the academy"
+  },
+  {
+    "slug": "notice-the-details",
+    "publishedDate": "2026-10-14",
+    "author": "RobotYOUNG Academy",
+    "category": "Learning habits",
+    "title": "Good ideas begin with a closer look.",
+    "image": "059-DJI_20260802160054_0064_D.webp",
+    "alt": "A learner concentrating on a circuit board on a blue work mat while an instructor stands nearby",
+    "images": [],
+    "summary": "Looking carefully, comparing a plan and asking for guidance are useful habits for any hands-on technology project.",
+    "sections": [
+      {
+        "heading": "Pause and compare",
+        "text": "Before moving to the next step, compare the build with the instructions. Notice the position of parts, the order of connections and any details that are easy to overlook. A brief pause can turn an assumption into something you can check.",
+        "images": []
+      },
+      {
+        "heading": "Make questions specific",
+        "text": "A question such as ‘Does this connection match the diagram?’ gives a teammate or instructor a clear place to begin. Careful observation and focused questions work together: one helps you notice a detail, and the other helps you understand it.",
+        "images": []
+      }
+    ],
+    "ctaTarget": "gallery",
+    "ctaLabel": "Explore learning at the academy"
   }
 ]

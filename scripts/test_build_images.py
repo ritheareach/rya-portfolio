@@ -24,7 +24,8 @@ class ImageBuildTests(unittest.TestCase):
         for name, entries in (
             ("gallery", [{"src": "assets/gallery/photo.JPG", "caption": "Photo"}]),
             ("robots", [{"src": "assets/robots/robot.png", "caption": "Robot"}]),
-            ("news", [{"image": "photo.JPG"}]),
+            ("news", [{"image": "photo.JPG", "images": [{"image": "small.bmp", "alt": "Small photo"}],
+                       "sections": [{"heading": "Build", "text": "Together", "images": [{"image": "small.bmp", "alt": "Section photo"}]}]}]),
         ):
             (self.root / "src/content" / f"{name}.json").write_text(json.dumps(entries))
         (self.root / "src/site-template.html").write_text('<img src="assets/gallery/photo.JPG"><img src="assets/robots/robot.png">')
@@ -56,6 +57,8 @@ class ImageBuildTests(unittest.TestCase):
         self.assertEqual(json.loads((self.root / "src/content/gallery.json").read_text())[0]["src"], "assets/gallery/photo.webp")
         self.assertEqual(json.loads((self.root / "src/content/robots.json").read_text())[0]["src"], "assets/robots/robot.webp")
         self.assertEqual(json.loads((self.root / "src/content/news.json").read_text())[0]["image"], "photo.webp")
+        self.assertEqual(json.loads((self.root / "src/content/news.json").read_text())[0]["images"][0]["image"], "small.webp")
+        self.assertEqual(json.loads((self.root / "src/content/news.json").read_text())[0]["sections"][0]["images"][0]["image"], "small.webp")
         self.assertEqual((self.root / "src/site-template.html").read_text(), '<img src="assets/gallery/photo.webp"><img src="assets/robots/robot.webp">')
         before = {p: p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
         build_images.build_images()

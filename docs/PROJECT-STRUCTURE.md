@@ -268,47 +268,56 @@ Module identifiers run from `RYA-L1A` through `RYA-L4D`.
 **Content:**
 
 - Heading: “Small discoveries. Big possibilities.”
-- One featured story in the Academy highlight category.
-- Two additional cards in the Courses & camps and Community categories.
+- The newest five stories: one featured story plus up to four grid cards.
+- Remaining stories in a horizontal “More stories” slider, shown only with more than five articles. Arrow controls appear when scrolling is needed; no autoplay.
 - Each card has a photograph, category, title, summary, and story link.
 
-**Visitor actions:** open one of the three story pages.
+**Visitor actions:** open story pages, scroll the extra cards, or use previous/next controls when visible.
 
 **Limits:** stories are static editorial content, not dated event announcements. There is no CMS, search, category filtering, or pagination.
 
 **Source:** `src/content/news.json` and news-generation code in `build_pages.py`, not the template’s `news` section.
 
-### 4.7 Academy-highlight story — `beyond-the-classroom.html`
+### 4.7–4.9 Facebook-derived stories
 
-**Title:** “Learning doesn’t stop at the classroom door.”
+The current source contains nine posts. Six complete posts were retrieved from supplied Facebook share links; two earlier saved-file articles remain, alongside a new Smart Lock System Reel article. Bodies retain original Khmer and English wording, emoji and hashtags. Titles and summaries are excerpts, not translations. `src/content/imports/robotyoung-shared-posts-2026-10-14.json` records the six photo-post sources, displayed Facebook dates and local photo mappings.
 
-**Category:** Academy highlight.
+- `2026-10-14-smart-lock-system-presentation.html`: original bilingual caption from the Reel's public page metadata, portrait Facebook video player and a locally saved cover capture from the same Reel. Featured first on News and the homepage; its date is the website publication date, not an inferred Facebook date.
+- `2026-10-14-stem-robotics-engineering.html`: robotic cars and engineering mindset; now includes the real post photographs.
+- `2026-10-14-hands-on-technology.html`: electronics, sensors and wiring; the previously truncated excerpt is now complete.
+- `2026-10-14-robotics-certificates.html`: students completing a Robotics Engineering level.
+- `2026-10-14-drone-fpv-graduation.html`: FPV course completion, assembly, simulation and flight.
+- `2026-10-14-robot-dog.html`: building and testing a quadruped robot.
+- `2026-10-14-robotic-cars-august.html`: a separate robotic-car post with its own photographs.
+- `2026-10-14-fpv-drone-course.html`: the earlier saved FPV course announcement and its poster.
+- `2026-10-14-mini-mission-drone-competition.html`: the earlier truncated competition archive; its separate illustrative course poster and missing details are identified.
 
-**Content:** classroom robot-building photograph; introduction connecting hands-on projects with Cambodia Robotics Olympiad participation; sections “Ideas become something you can build” and “A wider community of makers.”
+Each of the six photo-post imports has five locally saved WebP photos: a hero and four body-gallery photos with matching-ratio pairs. Ratios are preserved without cropping. The public responses supplied photos at a maximum dimension of 590px; these are the supplied previews, not full-resolution album downloads. Additional photos indicated by Facebook's album counts were not exposed in the responses.
 
-**Visitor actions:** return to all stories, explore student projects, or open either other story through “Keep exploring.”
+The former sample articles have been removed. Filename dates are website publication dates. Facebook displayed month/day labels without a year; source notes preserve those labels without inventing an original year. Current enrollment and schedules should be confirmed with the academy.
 
-### 4.8 Programs and camp story — `next-learning-adventure.html`
+**Shared story layout:** academy byline, publication date, lead paragraph, original-ratio main image, body sections with optional photos, a relevant call to action, and links to other stories. Their source is `src/content/news.json`. An optional `sourceUrl` (HTTPS) displays a compact “View original source” link, without a box or explanatory sentence. Detailed `sourceNote` values remain as editorial metadata in JSON, but are not displayed.
 
-**Title:** “Plan their next learning adventure.”
+#### Videos in articles
 
-**Category:** Courses & camps.
+Add an optional `videos` array either to an article (after its body) or to a section (after that section's text and photos). Multiple videos are supported. Each entry requires `url` and an accessible `title`; `caption` and `ratio` are optional.
 
-**Content:** photograph of a learner programming beside wheeled robots; introduction to finding a suitable learning path; sections “Start with their curiosity” and “Talk to us about availability.” The story advises asking the academy about class openings and the next Summer Camp rather than publishing unconfirmed dates.
+```json
+"videos": [
+  {
+    "url": "https://www.youtube.com/watch?v=M7lc1UVf-VE",
+    "title": "Example video — replace with your academy video",
+    "caption": "Optional Khmer or English caption",
+    "ratio": "landscape"
+  }
+]
+```
 
-**Visitor actions:** return to all stories, discover programs, or read another story.
+Normal YouTube/watch/Shorts, Vimeo, public Facebook video/Reel, TikTok `/@user/video/ID`, Instagram post/Reel, and Dailymotion video links are converted to player URLs. Short social share links may need to be expanded to the full video URL first; photo-post links are not videos. `ratio` accepts `landscape` (16:9), `portrait` (9:16), or `square` (1:1). Shorts, TikTok and Instagram default to portrait. Uploaded videos retain their actual ratio.
 
-### 4.9 Community story — `stay-curious.html`
+For another platform, supply its official HTTPS iframe player URL as `embedUrl`, alongside the original `url`. Do not paste raw iframe HTML or scripts. Unknown platforms without `embedUrl` show a link instead of a broken player. MP4, WebM and Ogg URLs use native video controls; local files must exist under `public/assets/videos/`, referenced as `assets/videos/filename.mp4`.
 
-**Title:** “Stay curious. Stay connected.”
-
-**Category:** Community.
-
-**Content:** robotics exhibition photograph; introduction to workshops, STEM activities, and the robotics community; sections “Make room for discovery” and “Keep in touch with the academy.”
-
-**Visitor actions:** return to all stories, contact the academy about upcoming activities, or read another story.
-
-**Shared story layout:** all three stories include an academy byline, lead paragraph, main image, two body sections, a relevant call to action, and links to the other stories. Their source is `src/content/news.json`.
+Video blocks include a “Watch original video” link unless the same URL is already available through the article’s “View original source” link. In that case, only the source link is displayed. Players do not request autoplay. Embeds are sandboxed and lazy-loaded, but load third-party content when near the viewport. Playback depends on each provider's privacy, login, region and embedding policies; **no implementation can guarantee embedding every platform or private video**. Keep an original link even for supported providers. Existing articles have not been assigned unrelated demonstration videos.
 
 ### 4.10 Contact and franchise — `contact.html`
 
@@ -410,6 +419,7 @@ an existing story illustrates every required field:
 [
   {
     "slug": "beyond-the-classroom",
+    "publishedDate": "2026-10-14",
     "category": "Academy highlight",
     "title": "Learning doesn’t stop at the classroom door.",
     "image": "050-IMG_20260718_094400.webp",
@@ -429,25 +439,30 @@ an existing story illustrates every required field:
 
 | Field | Meaning |
 | --- | --- |
-| `slug` | Unique lowercase letters/numbers separated by hyphens; generates `public/<slug>.html` |
+| `slug` | Unique lowercase letters/numbers separated by hyphens; generates `public/<publishedDate>-<slug>.html` |
+| `publishedDate` | Valid publication date in `YYYY-MM-DD` format; shown on cards and articles and used for newest-first sorting |
+| `author` | Optional plain-text article author; defaults to `RobotYOUNG Academy` when omitted |
 | `category`, `title`, `summary` | Category label, article heading, and introduction/listing summary |
 | `image` | Existing filename in `public/assets/gallery/`, without a directory prefix |
 | `alt` | Accessibility description for the article image |
-| `sections` | Array of body sections, each with plain-text `heading` and `text` |
+| `images` | Optional array of extra article photos, each with a gallery filename `image`, required `alt`, and optional plain-text `caption`; shown after the first body section in array order (below the main photo if there are no sections) |
+| `sections` | Array of body sections, each with plain-text `heading` and `text`, plus optional `images` using the same photo format; section photos appear directly below their text before article-level photos |
 | `ctaTarget` | Destination page name without `.html`: `index`, `about`, `programs`, `projects`, `gallery`, `news`, or `contact` |
 | `ctaLabel` | Visible call-to-action text |
 
 Duplicate an existing object to add a story, assign a new slug, and edit its
-content. The first object is featured on the homepage and news listing; keep
-at least one story. Body text is escaped for HTML, so HTML tags are displayed
+content. The newest story is featured on the homepage and news listing;
+equal dates retain JSON order. Keep at least one story. Body text is escaped for HTML, so HTML tags are displayed
 as text rather than interpreted as markup. JSON can contain Khmer and other
 Unicode text directly.
 
 The builder rejects duplicate or invalid slugs and reserved names (`index`,
 `news`, `franchise`, and the navigation page names). It also checks the image
-filename and CTA destination. Removing or renaming a story updates listings
+filename, publication date and CTA destination. Undated `<slug>.html` pages
+redirect to dated articles to preserve bookmarks. Removing or renaming a story updates listings
 and related-story links on rebuild, but does not delete its old generated
-page. Delete the obsolete `public/<old-slug>.html` separately if it should no
+page. Changing a publication date also leaves the previous dated page in place.
+Delete obsolete dated pages and undated redirects separately if they should no
 longer be accessible, and ensure your hosting deployment removes it too.
 
 #### Preview and publishing behavior

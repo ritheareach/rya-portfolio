@@ -57,9 +57,13 @@ def build_images():
         path = ROOT / "src/content/news.json"
         entries = json.loads(path.read_text())
         for entry in entries:
-            old = "assets/gallery/" + entry["image"]
-            if old in replacements:
-                entry["image"] = Path(replacements[old]).name
+            photos = [entry, *entry.get("images", [])]
+            for section in entry.get("sections", []):
+                photos.extend(section.get("images", []))
+            for photo in photos:
+                old = "assets/gallery/" + photo["image"]
+                if old in replacements:
+                    photo["image"] = Path(replacements[old]).name
         path.write_text(json.dumps(entries, indent=2) + "\n")
         path = ROOT / "src/site-template.html"
         template = path.read_text()

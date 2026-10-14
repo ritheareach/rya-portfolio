@@ -95,15 +95,58 @@ The HTML galleries remain as a fallback if JavaScript or catalog loading fails;
 edit the template separately if you need to update that fallback.
 
 For news, duplicate an object in `src/content/news.json` and edit its fields:
-`slug`, `category`, `title`, `image`, `alt`, `summary`, `sections`, `ctaTarget`,
+`slug`, `publishedDate`, `category`, `title`, `image`, `alt`, `summary`, `sections`, `ctaTarget`,
 and `ctaLabel`. Each section has `heading` and `text`. Text is plain text, not
 HTML. The image is a filename inside `public/assets/gallery/`.
-Use a unique lowercase hyphen-separated slug; it becomes the article filename.
+Add an optional `author` field for the article byline, for example
+`"author": "RobotYOUNG Academy"`. If omitted, it defaults to RobotYOUNG Academy.
+For photos in a specific section, add an optional `images` array to that section.
+Each photo has `image` (a gallery filename), `alt`, and an optional plain-text
+`caption`. Photos appear below that section’s text in array order, preserving
+their original proportions. One photo fills the reading column; multiple photos
+appear side by side on desktop and stack on mobile. For example:
+
+```json
+{
+  "heading": "Share the tools and the thinking",
+  "text": "Learning to build together.",
+  "images": [
+    {"image": "030-IMG_0898.webp", "alt": "Students assembling electronics", "caption": "Learning together."}
+  ]
+}
+```
+
+Omit a section’s `images` or use `[]` for text only. The older article-level
+`images` array is still supported: it appears after the first section’s own
+photos, or below the main photo if there are no sections. See the
+`better-ideas-together` post in `src/content/news.json` for a working example.
+All six existing posts include the editable fields and empty `images` arrays
+where no extra photos are needed. Copy whichever example fits your next post:
+
+| Post slug | Image example |
+| --- | --- |
+| `beyond-the-classroom` | Two captioned photos in one section |
+| `next-learning-adventure` | One full-width section photo |
+| `stay-curious` | Article-level extra photo (older supported format) |
+| `first-lines-of-code` | Two section photos, one without a caption |
+| `build-test-improve` | Text-only first section, photo in the second |
+| `better-ideas-together` | Separate photos in two sections, then text only |
+
+Use a unique lowercase hyphen-separated slug and a valid `publishedDate` in
+`YYYY-MM-DD` format. Together they generate a filename such as
+`2026-10-14-build-test-improve.html`. Dates appear on cards and articles.
 Do not use existing navigation page names as slugs. `ctaTarget` is a page name
 without `.html`: `index`, `about`, `programs`, `projects`, `gallery`, `news`, or
-`contact`. The first story is featured on the homepage and news page, so keep at
-least one story. Removing a story removes it from listings; delete its old
-generated `public/<slug>.html` separately if it should no longer be accessible.
+`contact`. Stories are sorted newest-first; the newest is featured on the homepage
+and news page. Equal dates keep JSON order. Keep at least one story.
+The News page shows the newest five articles (one featured plus four grid cards).
+Any remaining articles appear in a horizontal “More stories” slider below;
+arrow controls appear only when the cards overflow. Touch/trackpad scrolling
+and keyboard navigation remain available without automatic sliding.
+Undated `public/<slug>.html` pages redirect to the dated article for old bookmarks.
+Removing a story removes it from listings; delete its generated dated page and
+undated redirect separately if it should no longer be accessible. Changing a
+publication date also requires deleting the obsolete dated page.
 
 After editing, run both build commands in **Before publishing** below. The
 preview server reads gallery/robot JSON on refresh; news changes require a page
