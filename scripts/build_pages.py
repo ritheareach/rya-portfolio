@@ -188,8 +188,9 @@ for slug, category, title, image, alt, summary, paragraphs, target, label, publi
     if not paragraphs:
         content += article_images
     content += article_videos + source_details
-    content += f'<a class="button" href="{target}.html">{label} ↗</a></div><aside class="post-next"><h2>Keep exploring</h2>'
-    content += ''.join(f'<a class="secondary-link" href="{other[0]}.html">{other[2]} →</a>' for other in stories if other[0] != slug) + '</aside></article>'
+    content += f'<a class="button" href="{target}.html">{label} ↗</a></div><aside class="post-next"><div class="post-next-heading"><h2>Keep exploring</h2><a class="secondary-link" href="news.html">All stories →</a></div><div class="post-next-grid">'
+    recommendations = [other for other in stories if other[0] != slug][:3]
+    content += ''.join(f'<a class="post-next-card" href="{other[0]}.html"><img src="assets/gallery/{other[3]}" alt="" loading="lazy" /><span>{other[2]}</span><span class="post-next-date"><time datetime="{other[9]}">{other[10]}</time> ↗</span></a>' for other in recommendations) + '</div></aside></article>'
     publish(slug, title, content, "news")
     # Keep undated bookmarks working without duplicating article content.
     (PUBLIC / f"{original_slug}.html").write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url={slug}.html"><link rel="canonical" href="{slug}.html"><title>{title} — RobotYOUNG Academy</title></head><body><a href="{slug}.html">Continue to the article</a></body></html>')

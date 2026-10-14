@@ -57,6 +57,18 @@ class NewsDateTests(unittest.TestCase):
         self.assertIn('href="2025-12-31-old.html"', article)
         self.assertNotIn('href="old.html"', article)
 
+    def test_recommendations_stay_bounded_and_exclude_current_article(self):
+        records = [dict(self.story, slug=f"story-{i}", publishedDate="2026-10-14")
+                   for i in range(12)]
+        self.assertEqual(self.build(records).returncode, 0)
+        article = (self.root / "public/2026-10-14-story-0.html").read_text()
+        recommendations = article.split('<aside class="post-next">', 1)[1].split('</aside>', 1)[0]
+        self.assertEqual(recommendations.count('class="post-next-card"'), 3)
+        self.assertNotIn('href="2026-10-14-story-0.html"', recommendations)
+        self.assertIn('href="2026-10-14-story-1.html"', recommendations)
+        self.assertNotIn('href="2026-10-14-story-4.html"', recommendations)
+        self.assertIn('href="news.html"', recommendations)
+
     def test_authors_are_optional_and_rendered_as_plain_text(self):
         records = [
             dict(self.story, slug="default-author", publishedDate="2026-10-14"),
